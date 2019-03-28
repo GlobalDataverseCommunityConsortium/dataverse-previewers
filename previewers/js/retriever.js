@@ -103,6 +103,7 @@ function setParentUrl() {
 
 var filePageUrl = null;
 function addStandardPreviewHeader(file, title, authors, parentUrl) {
+	$('head').append($('<link/>').attr('type','image/png').attr('rel','icon').attr('href',queryParams.get("siteUrl") + '/javax.faces.resource/images/favicondataverse.png.xhtml'));
 	$('#logo').attr('src',queryParams.get("siteUrl")+ '/logos/preview_logo.png').attr('onerror','this.onerror=null;this.src="/dataverse-previewers/previewers/images/QDR_Logo_Dataverse.png";');
 	filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {
