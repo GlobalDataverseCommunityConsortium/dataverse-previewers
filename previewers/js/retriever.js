@@ -26,7 +26,7 @@ function startPreview(retrieveFile) {
 			.ajax({
 				dataType : "json",
 				url : versionUrl,
-				headers: { 'X-Dataverse-key': apiKey },
+				headers: { 'X-Dataverse-key': apiKey , 'Access-Control-Allow-Origin': '*'},
 				crossite : true,
 				success : function(json, status) {
 					var mdFields = json.data.metadataBlocks.citation.fields;
@@ -68,7 +68,7 @@ function startPreview(retrieveFile) {
 								$.ajax({
 									type : 'GET',
 									dataType : 'text',
-									headers: { 'X-Dataverse-key': apiKey },
+									headers: { 'X-Dataverse-key': apiKey, 'Access-Control-Allow-Origin': '*' },
 									crosssite : true,
 									url : fileUrl,
 									success : function(data, status) {
