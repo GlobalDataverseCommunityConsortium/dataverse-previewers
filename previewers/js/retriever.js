@@ -100,21 +100,6 @@ function setParentUrl() {
 		returnLabel = "Close Preview";
 	}
 
-	// Use parentUrl if
-	// we got it from
-	// the opener, and it points to the dataset or file page
-	// otherwise return
-	// to the dataset
-	// page
-	if ((parentUrl == null)
-			|| (parentUrl === "")
-			|| ((parentUrl.indexOf("dataset.xhtml") == -1) && (parentUrl
-					.indexOf("file.xhtml") == -1))) {
-		parentUrl = queryParams.get("siteUrl")
-				+ "/dataset.xhtml?persistentId=doi:" + datasetUrl + "&version="
-				+ version;
-	}
-}
 
 var filePageUrl = null;
 function addStandardPreviewHeader(file, title, authors, parentUrl) {
