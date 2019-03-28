@@ -1,9 +1,7 @@
-var parentUrl = "";
 var queryParams = null;
 var datasetUrl = null;
 var version = null;
 var fileDownloadUrl = null;
-var returnLabel = null;
 
 function startPreview(retrieveFile) {
 	// Retrieve tool launch parameters from URL
@@ -12,7 +10,6 @@ function startPreview(retrieveFile) {
 			+ queryParams.get("fileid") + "?gbrecs=false";
 	fileDownloadUrl = queryParams.get("siteUrl") + "/api/access/datafile/"
 			+ queryParams.get("fileid") + "?gbrecs=true";
-
 	var versionUrl = queryParams.get("siteUrl") + "/api/datasets/"
 			+ queryParams.get("datasetid") + "/versions/"
 			+ queryParams.get("datasetversion");
@@ -40,8 +37,6 @@ function startPreview(retrieveFile) {
 					if (version === ":draft") {
 						version = "DRAFT";
 					}
-					// Setup return URL
-					setParentUrl();
 
 					for ( var field in mdFields) {
 						if (mdFields[field].typeName === "title") {
@@ -98,15 +93,14 @@ function startPreview(retrieveFile) {
 			});
 }
 
-function setParentUrl() {
-		returnLabel = "Close Preview";
-	}
-
 
 var filePageUrl = null;
 function addStandardPreviewHeader(file, title, authors, parentUrl) {
+	//Add favicon from source Dataverse
 	$('head').append($('<link/>').attr('type','image/png').attr('rel','icon').attr('href',queryParams.get("siteUrl") + '/javax.faces.resource/images/favicondataverse.png.xhtml'));
+	//Add logo from source Dataverse or use a local one
 	$('#logo').attr('src',queryParams.get("siteUrl")+ '/logos/preview_logo.png').attr('onerror','this.onerror=null;this.src="/dataverse-previewers/previewers/images/QDR_Logo_Dataverse.png";');
+
 	filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {
 		filePageUrl = filePageUrl + "fileId=" + file.id;
@@ -130,8 +124,7 @@ function addStandardPreviewHeader(file, title, authors, parentUrl) {
 	header.append($("<div/>").addClass("btn btn-default").html(
 			"<a href='" + fileDownloadUrl + "'>Download File</a>"));
 	header.append($("<div/>").addClass("btn btn-default").html(
-			"<a href=\"javascript:returnToUrl(parentUrl);\">" + returnLabel
-					+ "</a>"));
+			"<a href=\"javascript:window.close();\">Close Preview</a>"));
 	header.append($("<div/>").addClass("preview-note").text(
 			"File uploaded on " + file.creationDate));
 }
@@ -143,8 +136,4 @@ function reportFailure(msg, statusCode) {
 			.text(msg
 					+ " If problem persists (has your login timed out?), report error code: "
 					+ statusCode + " to the repository administrator.");
-}
-
-function returnToUrl(parentUrl) {
-	window.close();
 }
