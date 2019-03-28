@@ -103,7 +103,7 @@ function setParentUrl() {
 
 var filePageUrl = null;
 function addStandardPreviewHeader(file, title, authors, parentUrl) {
-	$('#logo').attr('src',queryParams.get("siteUrl")+ '/logos/preview_logo.png').attr('onerror','this.onerror=null;this.src="QDR_Logo_Dataverse.png";');
+	$('#logo').attr('src',queryParams.get("siteUrl")+ '/logos/preview_logo.png').attr('onerror','this.onerror=null;this.src="/dataverse-previewers/previewers/images/QDR_Logo_Dataverse.png";');
 	filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {
 		filePageUrl = filePageUrl + "fileId=" + file.id;
