@@ -2,7 +2,9 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="/dataverse-previewers/previewers/js/xss.js"></script>
-<script type="text/javascript" src="/dataverse-previewers/previewers/js/html.js"></script>
+<script type="text/javascript" src="/dataverse-previewers/previewers/js/showdown.min.js"></script>
+<script type="text/javascript" src="/dataverse-previewers/previewers/js/showdown-xss-filter.js"></script>
+<script type="text/javascript" src="/dataverse-previewers/previewers/js/hypothesis.js"></script>
 <script type="text/javascript" src="/dataverse-previewers/previewers/js/retriever.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -12,11 +14,10 @@
 </head>
 <body class="container">
 <img id='logo'></img>
-<H1 class="page-title">Html Preview
+<H1 class="page-title">
+<a href="https://qdr.syr.edu/ati">ATI</a> Annotations
 </H1>
-<div class='preview-container'>
-<div class='preview-header'></div>
-<div class='preview'></div>
+<div class="hypothesis">
 </div>
 </body>
 </html>
