@@ -119,7 +119,7 @@ function addStandardPreviewHeader(file, title, authors, parentUrl) {
 	header.append($('<div/>').text("In ").append(
 			$('<span/>').attr('id', 'dataset').append($('<a/>').attr('href',queryParams.get("siteUrl")
 					+ "/dataset.xhtml?persistentId=doi:" + datasetUrl + "&version="
-					+ version).text(title)))).append(
+					+ version).text(title))).append(
 			$('<span/>').text(" (version " + version + ")").attr('id',
 					'version')).append(
 			$('<span/>').text(", by " + authors).attr('id', 'authors')));
