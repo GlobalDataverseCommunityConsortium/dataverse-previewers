@@ -2,8 +2,8 @@ $(document).ready(function() {
 startPreview(true);
 });
 
-function writeContentAndData(data, fileUrl, file, title, authors, parentUrl) {
-    addStandardPreviewHeader(file,title, authors, parentUrl);
+function writeContentAndData(data, fileUrl, file, title, authors) {
+    addStandardPreviewHeader(file,title, authors);
 //removing href and target attributes from the default
 var whiteList = {
     a: ["title"],

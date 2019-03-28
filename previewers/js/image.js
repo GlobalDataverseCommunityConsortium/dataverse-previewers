@@ -1,5 +1,9 @@
-function writeContent(fileUrl, label, creationDate, title, authors, parentUrl) {
-addStandardPreviewHeader(label, creationDate, title, authors, parentUrl);
+$(document).ready(function() {
+startPreview(true);
+});
+
+function writeContent(fileUrl, file, title, authors) {
+addStandardPreviewHeader(file, title, authors);
 $('.preview').append($('<img/>').attr('style','max-width:100%').attr('src',fileUrl).attr('id','previewImage'));
     $("#previewImage")
     .wrap('<span style="display:inline-block"></span>')
@@ -7,4 +11,3 @@ $('.preview').append($('<img/>').attr('style','max-width:100%').attr('src',fileU
     .parent()
     .zoom({on:'grab'});
 }
-

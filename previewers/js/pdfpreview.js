@@ -14,17 +14,18 @@ $(document)
     ctx = canvas.getContext('2d');
 document.getElementById('prev').addEventListener('click', onPrevPage);
 document.getElementById('next').addEventListener('click', onNextPage);
+startPreview(true);
 });
 
-function writeContent(fileUrl, label, creationDate, title, authors, parentUrl) {
-addStandardPreviewHeader(label, creationDate, title, authors, parentUrl);
+function writeContent(fileUrl, file, title, authors) {
+addStandardPreviewHeader(file, title, authors);
 
 
 // Loaded via <script> tag, create shortcut to access PDF.js exports.
 var pdfjsLib = window['pdfjs-dist/build/pdf'];
 
 // The workerSrc property shall be specified.
-pdfjsLib.GlobalWorkerOptions.workerSrc = '/resources/previewers/js/pdf.worker.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = '/dataverse-previewers/previewers/js/pdf.worker.js';
 
 /**
  * Asynchronously downloads PDF.

@@ -23,7 +23,7 @@ function startPreview(retrieveFile) {
 			.ajax({
 				dataType : "json",
 				url : versionUrl,
-//				headers: { 'X-Dataverse-key': apiKey },
+				// headers: { 'X-Dataverse-key': apiKey },
 				crossite : true,
 				success : function(json, status) {
 					var mdFields = json.data.metadataBlocks.citation.fields;
@@ -63,13 +63,13 @@ function startPreview(retrieveFile) {
 								$.ajax({
 									type : 'GET',
 									dataType : 'text',
-//									headers: { 'X-Dataverse-key': apiKey},
+									// headers: { 'X-Dataverse-key': apiKey},
 									crosssite : true,
 									url : fileUrl,
 									success : function(data, status) {
 										writeContentAndData(data, fileUrl,
 												datafiles[fileIndex].dataFile,
-												title, authors, parentUrl);
+												title, authors);
 									},
 									error : function(request, status, error) {
 										reportFailure(
@@ -81,7 +81,7 @@ function startPreview(retrieveFile) {
 							} else {
 								writeContent(fileUrl,
 										datafiles[entry].dataFile, title,
-										authors, parentUrl);
+										authors);
 							}
 						}
 					}
@@ -93,13 +93,24 @@ function startPreview(retrieveFile) {
 			});
 }
 
-
 var filePageUrl = null;
-function addStandardPreviewHeader(file, title, authors, parentUrl) {
-	//Add favicon from source Dataverse
-	$('head').append($('<link/>').attr('type','image/png').attr('rel','icon').attr('href',queryParams.get("siteUrl") + '/javax.faces.resource/images/favicondataverse.png.xhtml'));
-	//Add logo from source Dataverse or use a local one
-	$('#logo').attr('src',queryParams.get("siteUrl")+ '/logos/preview_logo.png').attr('onerror','this.onerror=null;this.src="/dataverse-previewers/previewers/images/QDR_Logo_Dataverse.png";');
+function addStandardPreviewHeader(file, title, authors) {
+	// Add favicon from source Dataverse
+	$('head')
+			.append(
+					$('<link/>')
+							.attr('type', 'image/png')
+							.attr('rel', 'icon')
+							.attr(
+									'href',
+									queryParams.get("siteUrl")
+											+ '/javax.faces.resource/images/favicondataverse.png.xhtml'));
+	// Add logo from source Dataverse or use a local one
+	$('#logo')
+			.attr('src', queryParams.get("siteUrl") + '/logos/preview_logo.png')
+			.attr(
+					'onerror',
+					'this.onerror=null;this.src="/dataverse-previewers/previewers/images/QDR_Logo_Dataverse.png";');
 
 	filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {
@@ -109,15 +120,20 @@ function addStandardPreviewHeader(file, title, authors, parentUrl) {
 	}
 	filePageUrl = filePageUrl + "&version=" + version;
 	var header = $('.preview-header').append($('<div/>'));
-	header.append($("<div/>").text("Filename: ").append($('<a/>').attr('href',filePageUrl).text(file.filename)).attr('id',
+	header.append($("<div/>").text("Filename: ").append(
+			$('<a/>').attr('href', filePageUrl).text(file.filename)).attr('id',
 			'filename'));
 	if ((file.description != null) && (file.description.length > 0)) {
 		header.append($('<div/>').html("Description: " + file.description));
 	}
 	header.append($('<div/>').text("In ").append(
-			$('<span/>').attr('id', 'dataset').append($('<a/>').attr('href',queryParams.get("siteUrl")
-					+ "/dataset.xhtml?persistentId=doi:" + datasetUrl + "&version="
-					+ version).text(title))).append(
+			$('<span/>').attr('id', 'dataset').append(
+					$('<a/>').attr(
+							'href',
+							queryParams.get("siteUrl")
+									+ "/dataset.xhtml?persistentId=doi:"
+									+ datasetUrl + "&version=" + version).text(
+							title))).append(
 			$('<span/>').text(" (version " + version + ")").attr('id',
 					'version')).append(
 			$('<span/>').text(", by " + authors).attr('id', 'authors')));
