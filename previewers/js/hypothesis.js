@@ -3,10 +3,10 @@ $(document).ready(function() {
 startPreview(true);
 });
 
-function writeContentAndData(json, fileUrl, file, title, authors) {
+function writeContentAndData(data, fileUrl, file, title, authors) {
     addStandardPreviewHeader(file,title, authors);
     
-
+  var json = JSON.parse(data);
   // Order by TextPositionSelector.start
   json.rows.sort(annotationCompare);
 
