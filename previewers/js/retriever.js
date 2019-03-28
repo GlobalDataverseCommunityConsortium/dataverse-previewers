@@ -17,16 +17,17 @@ function startPreview(retrieveFile) {
 			+ queryParams.get("datasetid") + "/versions/"
 			+ queryParams.get("datasetversion");
 	var apiKey = queryParams.get("key");
-	if (apiKey != null) {
-		fileUrl = fileUrl + "&key=" + apiKey;
-		versionUrl = versionUrl + "?key=" + apiKey;
-	}
+//	if (apiKey != null) {
+//		fileUrl = fileUrl + "&key=" + apiKey;
+//		versionUrl = versionUrl + "?key=" + apiKey;
+//	}
 	// Get metadata for dataset/version/file
 	$
 			.ajax({
 				dataType : "json",
 				url : versionUrl,
 				crossite : true,
+				headers: { 'X-Dataverse-key': apiKey },
 				success : function(json, status) {
 					var mdFields = json.data.metadataBlocks.citation.fields;
 
@@ -68,6 +69,7 @@ function startPreview(retrieveFile) {
 									type : 'GET',
 									dataType : 'text',
 									crosssite : true,
+									headers: { 'X-Dataverse-key': apiKey },
 									url : fileUrl,
 									success : function(data, status) {
 										writeContentAndData(data, fileUrl,
