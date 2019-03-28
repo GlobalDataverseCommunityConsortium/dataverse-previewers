@@ -235,5 +235,23 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"contentType\\":\\"video/quicktime\\"
 >}"
 
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
+>  \\"displayName\\":\\"View Annotations\\",
+>  \\"description\\":\\"View the annotation entries in a file.\\",
+>  \\"type\\":\\"explore\\",
+>  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/HypothesisPreview.html\\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>      ]
+>    },
+>  \\"contentType\\":\\"application/x-json-hypothesis\\"
+>}"
+
 
 
