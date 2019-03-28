@@ -18,27 +18,8 @@ function writeContentAndData(data, fileUrl, file, title, authors) {
 
   // Create header block
   var hypo = $(".hypothesis");
-  var url = json.rows[0].target[0].source;
-  var header = $("<div/>").addClass("annotation-header");
-  header
-      .append($("<div/>")
-          .html(
-              "This is the annotations-only view of the ATI data project <a href=\"javascript:returnToDataset(parentUrl);\">"
-                  + title + "</a> by " + authors + "."));
-  header.append($("<div/>").addClass("btn btn-default").append(
-      $("<a/>").attr("href", json.rows[0].links.incontext).text(
-          "View Annotations In Context")));
-  header
-      .append($("<div/>")
-          .addClass("btn btn-default")
-          .html(
-              "<a href=\"javascript:returnToDataset(parentUrl);\">Return To The Data Project.</a>"));
-  header.append($("<div/>").addClass("annotation-note").text(
-      json.total + " annotations, retrieved on " + file.creationDate));
 
-  hypo.before(header);
-
-  if (hypo.length > 0) {
+  if (json.rows.length > 0) {
     var converter = new showdown.Converter({
       extensions : [ 'xssFilter' ]
     });
