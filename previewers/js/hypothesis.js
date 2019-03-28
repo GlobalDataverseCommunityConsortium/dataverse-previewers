@@ -9,10 +9,10 @@ function writeContentAndData(data, fileUrl, file, title, authors) {
   var json = JSON.parse(data);
 	$(".preview-note").text(
 			json.total + " annotations, retrieved on " + file.creationDate);
-
-			$('.preview-header .btn')[0].before($("<div/>").addClass("btn btn-default").append(
-				      $("<a/>").attr("href", json.rows[0].links.incontext).text(
-			          "View Annotations In Context")));
+	$('.preview-header').append($("<div/>").attr('id','incontext').addClass("btn btn-default").append(
+		      $("<a/>").attr("href", json.rows[0].links.incontext).text(
+	          "View Annotations In Context")));
+			$('.preview-header .btn')[0].before($('#incontext'));
 			
   // Order by TextPositionSelector.start
   json.rows.sort(annotationCompare);
