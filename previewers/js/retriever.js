@@ -97,17 +97,7 @@ function startPreview(retrieveFile) {
 }
 
 function setParentUrl() {
-	// Setup return URL:w
-
-	var wo = window.opener;
-	if (wo != null) {
-		parentUrl = window.opener.location.href;
-		returnLabel = "Go to Data Project";
-		if (parentUrl.indexOf("dataset.xhtml") != -1) {
-			returnLabel = "Return to Data Project";
-		} else if (parentUrl.indexOf("file.xhtml") != -1) {
-			returnLabel = "Return to Data File";
-		}
+		returnLabel = "Close Preview";
 	}
 
 	// Use parentUrl if
@@ -136,13 +126,15 @@ function addStandardPreviewHeader(file, title, authors, parentUrl) {
 	}
 	filePageUrl = filePageUrl + "&version=" + version;
 	var header = $('.preview-header').append($('<div/>'));
-	header.append($("<div/>").html("Filename: " + file.filename).attr('id',
+	header.append($("<div/>").text("Filename: ").append($('<a/>').attr('href',filePageUrl).text(file.filename)).attr('id',
 			'filename'));
 	if ((file.description != null) && (file.description.length > 0)) {
 		header.append($('<div/>').html("Description: " + file.description));
 	}
 	header.append($('<div/>').text("In ").append(
-			$('<span/>').attr('id', 'dataset').html(title)).append(
+			$('<span/>').attr('id', 'dataset').append($('<a/>').attr('href',queryParams.get("siteUrl")
+					+ "/dataset.xhtml?persistentId=doi:" + datasetUrl + "&version="
+					+ version).text(title)))).append(
 			$('<span/>').text(" (version " + version + ")").attr('id',
 					'version')).append(
 			$('<span/>').text(", by " + authors).attr('id', 'authors')));
@@ -165,27 +157,5 @@ function reportFailure(msg, statusCode) {
 }
 
 function returnToUrl(parentUrl) {
-	if (!window.opener) {
-		// Opener is gone, just navigate to the dataset in this window
-		window.location.assign(parentUrl);
-	} else {
-		// See if the opener is still showing the dataset
-		try {
-			if (window.opener.location.href === parentUrl) {
-				// Yes - close the opener and reopen the dataset here (since
-				// just
-				// closing this window may not bring the opener to the front)
-				window.opener.close();
-				window.open(parentUrl, "_parent");
-			} else {
-				// No - so leave the opener alone and open the dataset here
-				window.location.assign(parentUrl);
-			}
-		} catch (err) {
-			// No, and the opener has navigated to some other site, so just open
-			// the
-			// dataset here
-			window.location.assign(parentUrl);
-		}
-	}
+	window.close();
 }
