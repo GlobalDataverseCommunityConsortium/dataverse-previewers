@@ -14,7 +14,7 @@ $(document)
     ctx = canvas.getContext('2d');
 document.getElementById('prev').addEventListener('click', onPrevPage);
 document.getElementById('next').addEventListener('click', onNextPage);
-startPreview(true);
+startPreview(false);
 });
 
 function writeContent(fileUrl, file, title, authors) {

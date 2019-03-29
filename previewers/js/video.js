@@ -1,5 +1,5 @@
 $(document).ready(function() {
-startPreview(true);
+startPreview(false);
 });
 
 function writeContent(fileUrl, file, title, authors) {
