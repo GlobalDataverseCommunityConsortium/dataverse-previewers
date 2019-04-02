@@ -111,8 +111,10 @@ function addStandardPreviewHeader(file, title, authors) {
 			.attr(
 					'onerror',
 					'this.onerror=null;this.src="/dataverse-previewers/previewers/images/logo_placeholder.png";');
-
-	filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
+	//Footer
+    $('body').append($('<div/>').html("Previewers originally developed by <a href='https://qdr.syr.edu'>QDR</a> and maintained at <a href='https://github.com/QualitativeDataRepository/dataverse-previewers'>https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Feedback and contributions welcome."));
+	
+    filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {
 		filePageUrl = filePageUrl + "fileId=" + file.id;
 	} else {
