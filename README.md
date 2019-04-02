@@ -16,6 +16,8 @@ They will also place your logo in the upper left corner (240px wide x 140px high
 ## Known Limitations:
 
 To preview restricted content, a user must have permission to view the relevant dataset version and download the relevant file and must have created an API Token for themselves in Dataverse. (Viewing public/published content does not require an API Token.) Note that API Tokens should be treated like passwords - if you use previewers on public computers, you may want to 'Recreate' your API Token afterward (to invalidate the previous one). Also note that API Tokens expire - you may need to 'Recreate' one if you have not used it in a while. 
+
+File creation date is only shown in the header for Dataverse v4.12+.
   
 Video seeking does not work on some browsers and some Dataverse instances due to the lack of support in some Dataverse storageIO drivers for partial file downloads. As of now, Seeking does not work in Chrome but does work in Firefox. Other browsers haven't been tested.
 

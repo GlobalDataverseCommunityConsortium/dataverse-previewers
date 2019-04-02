@@ -143,8 +143,10 @@ function addStandardPreviewHeader(file, title, authors) {
 			"<a href='" + fileDownloadUrl + "'>Download File</a>"));
 	header.append($("<div/>").addClass("btn btn-default").html(
 			"<a href=\"javascript:window.close();\">Close Preview</a>"));
-	header.append($("<div/>").addClass("preview-note").text(
+	if(file.creationDate != null) {
+		header.append($("<div/>").addClass("preview-note").text(
 			"File uploaded on " + file.creationDate));
+	}
 }
 
 function reportFailure(msg, statusCode) {
