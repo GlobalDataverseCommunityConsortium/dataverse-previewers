@@ -64,6 +64,12 @@ margin-left: 40px;
     min-height:140px;
 }
 
+#footer {
+    font-size: x-small;
+    float: right;
+}
+}
+
 .annotation-note {
     float:right;
     font-size: 12px;
