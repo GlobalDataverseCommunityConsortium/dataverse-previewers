@@ -11,7 +11,7 @@ The tools here are lightweight wrappers around standard HTML5 functionality (e.g
 
 ## Customizations: 
 The previewers will use your favicon if it exists at the default Dataverse location: ```<your site URL>/javax.faces.resource/images/favicondataverse.png.xhtml```
-They will also use your logo if you add one at ```<your site URL>/logos/preview_logo.png``` (which, by default, corresponds to a file of that name in your glassfish ./docroot/logos directory (e.g. /usr/local/glassfish4/glassfish/domains/domain1/docroot/logos)). If you do not supply a logo, a generic QDR logo will be used.
+They will also place your logo in the upper left corner (240px wide x 140px high recommended) if you add one at ```<your site URL>/logos/preview_logo.png``` (which, by default, corresponds to a file of that name in your glassfish ./docroot/logos directory (e.g. /usr/local/glassfish4/glassfish/domains/domain1/docroot/logos)). By default, a blank white image is shown.
 
 ## Known Limitations:
 
