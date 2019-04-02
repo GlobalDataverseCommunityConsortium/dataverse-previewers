@@ -110,7 +110,7 @@ function addStandardPreviewHeader(file, title, authors) {
 			.attr('src', queryParams.get("siteUrl") + '/logos/preview_logo.png')
 			.attr(
 					'onerror',
-					'this.onerror=null;this.src="/dataverse-previewers/previewers/images/QDR_Logo_Dataverse.png";');
+					'this.onerror=null;this.src="";');
 
 	filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {

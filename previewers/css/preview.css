@@ -61,6 +61,7 @@ body<img {
     display: inline-block;
     margin-left: 40px;
     width: 236px;
+    min-height:141px;
 }
 
 .annotation-note {
