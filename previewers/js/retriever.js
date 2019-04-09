@@ -7,9 +7,9 @@ function startPreview(retrieveFile) {
 	// Retrieve tool launch parameters from URL
 	queryParams = new URLSearchParams(window.location.search.substring(1));
 	var fileUrl = queryParams.get("siteUrl") + "/api/access/datafile/"
-			+ queryParams.get("fileid") + "?gbrecs=false";
-	fileDownloadUrl = queryParams.get("siteUrl") + "/api/access/datafile/"
 			+ queryParams.get("fileid") + "?gbrecs=true";
+	fileDownloadUrl = queryParams.get("siteUrl") + "/api/access/datafile/"
+			+ queryParams.get("fileid") + "?gbrecs=false";
 	var versionUrl = queryParams.get("siteUrl") + "/api/datasets/"
 			+ queryParams.get("datasetid") + "/versions/"
 			+ queryParams.get("datasetversion");
