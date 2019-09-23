@@ -31,6 +31,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"Read Text\\",
 >  \\"description\\":\\"Read the text file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/TextPreview.html\",
 >  \\"toolParameters\\": {
@@ -49,6 +50,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"View Html\\",
 >  \\"description\\":\\"View the html file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/HtmlPreview.html\",
 >  \\"toolParameters\\": {
@@ -67,6 +69,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"Play Audio\\",
 >  \\"description\\":\\"Listen to an audio file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/AudioPreview.html\",
 >  \\"toolParameters\\": {
@@ -85,6 +88,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"Play Audio\\",
 >  \\"description\\":\\"Listen to an audio file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/AudioPreview.html\",
 >  \\"toolParameters\\": {
@@ -103,6 +107,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"View Image\\",
 >  \\"description\\":\\"Preview an image file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
@@ -121,6 +126,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"View Image\\",
 >  \\"description\\":\\"Preview an image file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
@@ -139,6 +145,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"View Image\\",
 >  \\"description\\":\\"Preview an image file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
@@ -157,6 +164,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"View Image\\",
 >  \\"description\\":\\"Preview an image file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
@@ -175,6 +183,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"Read Document\\",
 >  \\"description\\":\\"Read a pdf document.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/PDFPreview.html\",
 >  \\"toolParameters\\": {
@@ -193,6 +202,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"Play Video\\",
 >  \\"description\\":\\"Watch a video file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
@@ -211,6 +221,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"Play Video\\",
 >  \\"description\\":\\"Watch a video file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
@@ -229,6 +240,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"Play Video\\",
 >  \\"description\\":\\"Watch a video file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
@@ -247,6 +259,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >"{
 >  \\"displayName\\":\\"View Annotations\\",
 >  \\"description\\":\\"View the annotation entries in a file.\\",
+>  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/HypothesisPreview.html\",
 >  \\"toolParameters\\": {
