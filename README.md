@@ -22,7 +22,11 @@ File creation date is only shown in the header for Dataverse v4.12+.
 Video seeking does not work on some browsers and some Dataverse instances due to the lack of support in some Dataverse storageIO drivers for partial file downloads. As of now, Seeking does not work in Chrome but does work in Firefox. Other browsers haven't been tested.
 
 ## How can I help?
-These tools were developed through the [Qualitative Data Repository](https://qdr.syr.edu) but are being offered to the Dataverse community at large. If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
+The original tools were developed through the [Qualitative Data Repository](https://qdr.syr.edu) but are being offered to the Dataverse community at large. 
+
+The CSV Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
+
+If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
 
 ### Curl commands to configure these tools with your dataverse instance:
 You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
@@ -253,6 +257,25 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >      ]
 >    },
 >  \\"contentType\\":\\"video/quicktime\\"
+>}"
+
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
+>  \\"displayName\\":\\"View Data\\",
+>  \\"description\\":\\"View the spreadsheet data.\\",
+>  \\"scope\\":\\"file\\",
+>  \\"type\\":\\"explore\\",
+>  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/CSVPreview.html\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>      ]
+>    },
+>  \\"contentType\\":\\"text/comma-separated-values\\"
 >}"
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
