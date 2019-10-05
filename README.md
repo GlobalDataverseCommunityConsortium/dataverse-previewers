@@ -275,7 +275,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"datasetversion\\":\\"{datasetVersion}\\"}
 >      ]
 >    },
->  \\"contentType\\":\\"text/comma-separated-values\\"
+>  \\"contentType\\":\\"text/comma-separated-values\\",
 >  \\"contentType\\":\\"text/tab-separated-values\\"
 >}"
 
