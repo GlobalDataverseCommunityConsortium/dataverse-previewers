@@ -280,6 +280,25 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
 >"{
+>  \\"displayName\\":\\"View Data\\",
+>  \\"description\\":\\"View the spreadsheet data.\\",
+>  \\"scope\\":\\"file\\",
+>  \\"type\\":\\"explore\\",
+>  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/CSVPreview.html\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>      ]
+>    },
+>  \\"contentType\\":\\"text/tab-separated-values\\"
+>}"
+
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
 >  \\"displayName\\":\\"View Annotations\\",
 >  \\"description\\":\\"View the annotation entries in a file.\\",
 >  \\"scope\\":\\"file\\",
