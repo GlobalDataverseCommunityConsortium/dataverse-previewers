@@ -27,7 +27,7 @@ function writeContent(fileUrl, file, title, authors) {
           Handsontable(handsontableContainer, {
             data: data.data,
             rowHeaders: true,
-            colHeaders: data.meta.fields,
+            colHeaders: Object.keys(data.data[0]),
             columnSorting: true
           })
         }
