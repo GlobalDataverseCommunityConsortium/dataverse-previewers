@@ -24,7 +24,7 @@ Video seeking does not work on some browsers and some Dataverse instances due to
 ## How can I help?
 The original tools were developed through the [Qualitative Data Repository](https://qdr.syr.edu) but are being offered to the Dataverse community at large. 
 
-The CSV Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
+The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
 
 If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
 
@@ -265,7 +265,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"View the spreadsheet data.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/CSVPreview.html\",
+>  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -284,7 +284,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"View the spreadsheet data.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/CSVPreview.html\",
+>  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
