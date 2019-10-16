@@ -5,6 +5,8 @@ var fileDownloadUrl = null;
 
 function startPreview(retrieveFile) {
 	// Retrieve tool launch parameters from URL
+        var i18n = $.i18n();
+	i18n.locale="en";
 	queryParams = new URLSearchParams(window.location.search.substring(1));
 	var fileUrl = queryParams.get("siteUrl") + "/api/access/datafile/"
 			+ queryParams.get("fileid") + "?gbrecs=true";
@@ -113,6 +115,14 @@ function addStandardPreviewHeader(file, title, authors) {
 					'this.onerror=null;this.src="/dataverse-previewers/previewers/images/logo_placeholder.png";');
 	//Footer
     $('body').append($('<div/>').html("Previewers originally developed by <a href='https://qdr.syr.edu'>QDR</a> and maintained at <a href='https://github.com/QualitativeDataRepository/dataverse-previewers'>https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Feedback and contributions welcome.").attr('id','footer'));
+    var i18n = $.i18n();
+    var filenameText = $.i18n( "filenameText" );
+    var inText = $.i18n( "inText" );
+    var byText = $.i18n( "byText" );
+    var downloadFileText = $.i18n( "downloadFileText" );
+    var closePreviewText = $.i18n( "closePreviewText" );
+    var versionText = $.i18n( "versionText" );
+    var descriptionText = $.i18n( "descriptionText" );
 	
     filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {
@@ -122,13 +132,13 @@ function addStandardPreviewHeader(file, title, authors) {
 	}
 	filePageUrl = filePageUrl + "&version=" + version;
 	var header = $('.preview-header').append($('<div/>'));
-	header.append($("<div/>").text("Filename: ").append(
+	header.append($("<div/>").append($("<span/>").attr('class', "filenameText").text(filenameText)).append(
 			$('<a/>').attr('href', filePageUrl).text(file.filename)).attr('id',
 			'filename'));
 	if ((file.description != null) && (file.description.length > 0)) {
-		header.append($('<div/>').html("Description: " + file.description));
+		header.append($('<div/>').html("<span class=\"descriptionText\">" + descriptionText + "</span>" + file.description));
 	}
-	header.append($('<div/>').text("In ").append(
+	header.append($('<div/>').append($("<span/>").attr('class', "inText").text(inText)).append(
 			$('<span/>').attr('id', 'dataset').append(
 					$('<a/>').attr(
 							'href',
@@ -136,13 +146,13 @@ function addStandardPreviewHeader(file, title, authors) {
 									+ "/dataset.xhtml?persistentId=doi:"
 									+ datasetUrl + "&version=" + version).text(
 							title))).append(
-			$('<span/>').text(" (version " + version + ")").attr('id',
-					'version')).append(
-			$('<span/>').text(", by " + authors).attr('id', 'authors')));
+			$('<span/>').html(" (<span class=\"versionText\">" + versionText + "</span> " + version + ")").attr('id', 'version')).append(
+			$('<span/>').text(byText).attr('class', 'byText')).append(
+			$('<span/>').text(authors).attr('id', 'authors')));
 	header.append($("<div/>").addClass("btn btn-default").html(
-			"<a href='" + fileDownloadUrl + "'>Download File</a>"));
+			"<a class='downloadFileText' href='" + fileDownloadUrl + "'>" + downloadFileText + "</a>"));
 	header.append($("<div/>").addClass("btn btn-default").html(
-			"<a href=\"javascript:window.close();\">Close Preview</a>"));
+			"<a class=\"closePreviewText\" href=\"javascript:window.close();\">" + closePreviewText + "</a>"));
 	if(file.creationDate != null) {
 		header.append($("<div/>").addClass("preview-note").text(
 			"File uploaded on " + file.creationDate));
