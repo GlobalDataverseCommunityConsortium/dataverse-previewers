@@ -2,6 +2,7 @@ var queryParams = null;
 var datasetUrl = null;
 var version = null;
 var fileDownloadUrl = null;
+var previewMode = false;
 
 function startPreview(retrieveFile) {
 	// Retrieve tool launch parameters from URL
@@ -16,6 +17,8 @@ function startPreview(retrieveFile) {
 			+ queryParams.get("datasetid") + "/versions/"
 			+ queryParams.get("datasetversion");
 	var apiKey = queryParams.get("key");
+	// Hide header and citation to embed on Dataverse file landing page.
+	previewMode = queryParams.get("preview");
 	if (apiKey != null) {
 		fileUrl = fileUrl + "&key=" + apiKey;
 		versionUrl = versionUrl + "?key=" + apiKey;
@@ -156,6 +159,11 @@ function addStandardPreviewHeader(file, title, authors) {
 	if(file.creationDate != null) {
 		header.append($("<div/>").addClass("preview-note").text(
 			"File uploaded on " + file.creationDate));
+	}
+	if (previewMode === 'true') {
+		$('#logo').hide();
+		$('.page-title').hide();
+		$('.preview-header').hide();
 	}
 }
 
