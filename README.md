@@ -29,7 +29,13 @@ The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/an
 If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
 
 ### Curl commands to configure these tools with your dataverse instance:
-You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
+You should be able to cut/paste any/all of the commands below to run on your Dataverse machine. Most are generally useful, but some may not be relevant for your repository. You can avoid installing those or remove them later using the Dataverse API
+
+>curl -X DELETE http://localhost:8080/api/admin/externalTools/<N> 
+
+where <N> is the number the tool is assigned in your repository.
+
+Commands to cut/paste:
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
 >"{
