@@ -24,7 +24,7 @@ Video seeking does not work on some browsers and some Dataverse instances due to
 ## How can I help?
 The original tools were developed through the [Qualitative Data Repository](https://qdr.syr.edu) but are being offered to the Dataverse community at large. 
 
-The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
+The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss) with support from the DataverseEU SSHOC project.
 
 If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
 
