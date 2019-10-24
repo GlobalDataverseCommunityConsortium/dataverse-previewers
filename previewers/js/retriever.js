@@ -2,6 +2,7 @@ var queryParams = null;
 var datasetUrl = null;
 var version = null;
 var fileDownloadUrl = null;
+var previewMode = null;
 
 function startPreview(retrieveFile) {
 	// Retrieve tool launch parameters from URL
@@ -14,6 +15,8 @@ function startPreview(retrieveFile) {
 			+ queryParams.get("datasetid") + "/versions/"
 			+ queryParams.get("datasetversion");
 	var apiKey = queryParams.get("key");
+	// Hide header and citation to embed on Dataverse file landing page.
+	previewMode = queryParams.get("preview");
 	if (apiKey != null) {
 		fileUrl = fileUrl + "&key=" + apiKey;
 		versionUrl = versionUrl + "?key=" + apiKey;
@@ -95,22 +98,24 @@ function startPreview(retrieveFile) {
 
 var filePageUrl = null;
 function addStandardPreviewHeader(file, title, authors) {
-	// Add favicon from source Dataverse
-	$('head')
-			.append(
-					$('<link/>')
-							.attr('type', 'image/png')
-							.attr('rel', 'icon')
-							.attr(
-									'href',
-									queryParams.get("siteUrl")
-											+ '/javax.faces.resource/images/favicondataverse.png.xhtml'));
-	// Add logo from source Dataverse or use a local one
-	$('#logo')
-			.attr('src', queryParams.get("siteUrl") + '/logos/preview_logo.png')
-			.attr(
-					'onerror',
-					'this.onerror=null;this.src="/dataverse-previewers/previewers/images/logo_placeholder.png";');
+	if (previewMode !== 'true') {
+		// Add favicon from source Dataverse
+		$('head')
+				.append(
+						$('<link/>')
+								.attr('type', 'image/png')
+								.attr('rel', 'icon')
+								.attr(
+										'href',
+										queryParams.get("siteUrl")
+												+ '/javax.faces.resource/images/favicondataverse.png.xhtml'));
+		// Add logo from source Dataverse or use a local one, unless we are in preview mode
+		$('#logo')
+				.attr('src', queryParams.get("siteUrl") + '/logos/preview_logo.png')
+				.attr(
+						'onerror',
+						'this.onerror=null;this.src="/dataverse-previewers/previewers/images/logo_placeholder.png";');
+	}
 	//Footer
     $('body').append($('<div/>').html("Previewers originally developed by <a href='https://qdr.syr.edu'>QDR</a> and maintained at <a href='https://github.com/QualitativeDataRepository/dataverse-previewers'>https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Feedback and contributions welcome.").attr('id','footer'));
 	
@@ -146,6 +151,11 @@ function addStandardPreviewHeader(file, title, authors) {
 	if(file.creationDate != null) {
 		header.append($("<div/>").addClass("preview-note").text(
 			"File uploaded on " + file.creationDate));
+	}
+	if (previewMode === 'true') {
+		$('#logo').hide();
+		$('.page-title').hide();
+		$('.preview-header').hide();
 	}
 }
 
