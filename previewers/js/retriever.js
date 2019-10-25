@@ -119,38 +119,40 @@ function addStandardPreviewHeader(file, title, authors) {
 	//Footer
     $('body').append($('<div/>').html("Previewers originally developed by <a href='https://qdr.syr.edu'>QDR</a> and maintained at <a href='https://github.com/QualitativeDataRepository/dataverse-previewers'>https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Feedback and contributions welcome.").attr('id','footer'));
 	
-    filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
-	if (file.persistentId.length == 0) {
-		filePageUrl = filePageUrl + "fileId=" + file.id;
-	} else {
-		filePageUrl = filePageUrl + "persistentId=" + file.persistentId;
-	}
-	filePageUrl = filePageUrl + "&version=" + version;
-	var header = $('.preview-header').append($('<div/>'));
-	header.append($("<div/>").text("Filename: ").append(
-			$('<a/>').attr('href', filePageUrl).text(file.filename)).attr('id',
-			'filename'));
-	if ((file.description != null) && (file.description.length > 0)) {
-		header.append($('<div/>').html("Description: " + file.description));
-	}
-	header.append($('<div/>').text("In ").append(
-			$('<span/>').attr('id', 'dataset').append(
-					$('<a/>').attr(
-							'href',
-							queryParams.get("siteUrl")
-									+ "/dataset.xhtml?persistentId=doi:"
-									+ datasetUrl + "&version=" + version).text(
-							title))).append(
-			$('<span/>').text(" (version " + version + ")").attr('id',
-					'version')).append(
-			$('<span/>').text(", by " + authors).attr('id', 'authors')));
-	header.append($("<div/>").addClass("btn btn-default").html(
-			"<a href='" + fileDownloadUrl + "'>Download File</a>"));
-	header.append($("<div/>").addClass("btn btn-default").html(
-			"<a href=\"javascript:window.close();\">Close Preview</a>"));
-	if(file.creationDate != null) {
-		header.append($("<div/>").addClass("preview-note").text(
-			"File uploaded on " + file.creationDate));
+	if (previewMode !== 'true') {
+		filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
+		if (file.persistentId.length == 0) {
+			filePageUrl = filePageUrl + "fileId=" + file.id;
+		} else {
+			filePageUrl = filePageUrl + "persistentId=" + file.persistentId;
+		}
+		filePageUrl = filePageUrl + "&version=" + version;
+		var header = $('.preview-header').append($('<div/>'));
+		header.append($("<div/>").text("Filename: ").append(
+				$('<a/>').attr('href', filePageUrl).text(file.filename)).attr('id',
+				'filename'));
+		if ((file.description != null) && (file.description.length > 0)) {
+			header.append($('<div/>').html("Description: " + file.description));
+		}
+		header.append($('<div/>').text("In ").append(
+				$('<span/>').attr('id', 'dataset').append(
+						$('<a/>').attr(
+								'href',
+								queryParams.get("siteUrl")
+										+ "/dataset.xhtml?persistentId=doi:"
+										+ datasetUrl + "&version=" + version).text(
+								title))).append(
+				$('<span/>').text(" (version " + version + ")").attr('id',
+						'version')).append(
+				$('<span/>').text(", by " + authors).attr('id', 'authors')));
+		header.append($("<div/>").addClass("btn btn-default").html(
+				"<a href='" + fileDownloadUrl + "'>Download File</a>"));
+		header.append($("<div/>").addClass("btn btn-default").html(
+				"<a href=\"javascript:window.close();\">Close Preview</a>"));
+		if(file.creationDate != null) {
+			header.append($("<div/>").addClass("preview-note").text(
+				"File uploaded on " + file.creationDate));
+		}
 	}
 	if (previewMode === 'true') {
 		$('#logo').hide();
