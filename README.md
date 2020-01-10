@@ -4,7 +4,7 @@ A collection of data file previewers that conform to the [Dataverse](https://dat
 ![Preview common data types](https://github.com/QualitativeDataRepository/dataverse-previewers/blob/master/examples/datasetdisplay.png?raw=true)
 
 ## Installation
-These previewers can be run without downloading them by simply running the curl command(s) below to register then with your local dataverse instance. There is one command per mimetype you wish to preview (i.e. multiple commands to cover different types of images.) You can run any/all of the commands as you like. Note that the Hypothesis annotation previewer assumes a custom mimetype and may not be useful for most Dataverses (contact QDR for more information). Dataverse 4.11+ is required.
+These previewers can be run without downloading them by simply running the curl command(s) below to register then with your local dataverse instance. There is one command per mimetype you wish to preview (i.e. multiple commands to cover different types of images). You can run any/all of the commands as you like. Note that the Hypothesis annotation previewer assumes a custom mimetype and may not be useful for most Dataverses (contact QDR for more information). Dataverse 4.11+ is required.
 
 Dataverse installations configured to redirect to S3 storage for file downloads will need to enable CORS at the storage layer as well as the application layer. (See, for example, [Amazon's CORS configuration guidance](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/add-cors-configuration.html)).
 
@@ -26,12 +26,18 @@ Video seeking does not work on some browsers and some Dataverse instances due to
 ## How can I help?
 The original tools were developed through the [Qualitative Data Repository](https://qdr.syr.edu) but are being offered to the Dataverse community at large. 
 
-The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
+The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss) with support from the DataverseEU SSHOC project.
 
 If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
 
 ### Curl commands to configure these tools with your dataverse instance:
-You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
+You should be able to cut/paste any/all of the commands below to run on your Dataverse machine. Most are generally useful, but some may not be relevant for your repository. You can avoid installing those or remove them later using the Dataverse API
+
+>curl -X DELETE http://localhost:8080/api/admin/externalTools/<N> 
+
+where <N> is the number the tool is assigned in your repository.
+
+Commands to cut/paste:
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
 >"{
