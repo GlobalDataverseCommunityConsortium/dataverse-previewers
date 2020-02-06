@@ -28,7 +28,7 @@ The original tools were developed through the [Qualitative Data Repository](http
 
 The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
 
-If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
+If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [dataverse-dev@googlegroups.com](mailto:dataverse-dev@googlegroups.com) or work through github to fork/make pull-requests against the repository.
 
 ### Curl commands to configure these tools with your dataverse instance:
 You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
