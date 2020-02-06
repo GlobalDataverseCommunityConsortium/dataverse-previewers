@@ -40,7 +40,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/TextPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/TextPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -60,7 +60,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/HtmlPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/HtmlPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -80,7 +80,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/AudioPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/AudioPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -100,7 +100,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/AudioPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/AudioPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -120,7 +120,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -140,7 +140,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -160,7 +160,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -180,7 +180,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/PDFPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/PDFPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -200,7 +200,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -220,7 +220,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -240,7 +240,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -260,7 +260,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -280,7 +280,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -300,7 +300,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/TextPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/TextPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -320,7 +320,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/TextPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/TextPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -340,7 +340,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/HypothesisPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/HypothesisPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
