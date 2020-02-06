@@ -1,4 +1,4 @@
-# dataverse-previewers
+# Dataverse Previewers
 A collection of data file previewers that conform to the [Dataverse](https://dataverse.org) external tools interface, originally developed by the [Qualitative Data Repository](https://qdr.syr.edu). Earlier versions of Dataverse (v4.11+) make previewers available through the external tools button on Dataset pages (left). Newer versions (v4.18+) also use previewers for embedded display on Datafile pages (right).
 
 <img align="right" width="30%" src="https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers/blob/master/examples/previewInPage.PNG?raw=true">
@@ -38,7 +38,11 @@ The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/an
 
 If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [dataverse-dev@googlegroups.com](mailto:dataverse-dev@googlegroups.com) or work through github to fork/make pull-requests against the repository.
 
-### Curl commands to configure these tools with your dataverse instance:
+Contributors are expected to keep the master branch in a 'production-ready' state, as Dataverse instances may be using the html, javascript, and css files there directly via their github.io URLs (see curl commands below).
+
+By commiting code to the repository, Contributors are agreeing to make it available under the [MIT Open Source license](https://globaldataversecommunityconsortium.github.io/dataverse-previewers/LICENSE).
+
+## Curl commands to configure these tools with your dataverse instance:
 You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
