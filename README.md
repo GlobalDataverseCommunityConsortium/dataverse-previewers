@@ -1,7 +1,9 @@
 # dataverse-previewers
-A collection of data file previewers that conform to the [Dataverse](https://dataverse.org) external tools interface, originally developed by the [Qualitative Data Repository](https://qdr.syr.edu).
+A collection of data file previewers that conform to the [Dataverse](https://dataverse.org) external tools interface, originally developed by the [Qualitative Data Repository](https://qdr.syr.edu). Earlier versions of Dataverse (v4.11+) make previewers available through the external tools button on Dataset pages (left). Newer versions (v4.18+) also use previewers for embedded display on Datafile pages (right).
 
-![Preview common data types](https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers/blob/master/examples/datasetdisplay.png?raw=true)
+<img align="right" width="30%" src="https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers/blob/master/examples/previewInPage.PNG?raw=true">
+<img width="65%" src="https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers/blob/master/examples/datasetdisplay.png?raw=true">
+
 
 ## Installation
 These previewers can be run without downloading them by simply running the curl command(s) below to register then with your local dataverse instance. (You can also create local copies and register those). There is one command per mimetype you wish to preview (i.e. multiple commands to cover different types of images.) You can run any/all of the commands as you like. Note that the Hypothesis annotation previewer assumes a custom mimetype and may not be useful for most Dataverses (contact [QDR](mailto:qdr@syr.edu) for more information). Dataverse 4.11+ is required.
