@@ -25,9 +25,12 @@ function startPreview(retrieveFile) {
   }
   var i18n = $.i18n();
   i18n.locale=locale;
-  i18n.load( 'i18n/' + i18n.locale + '.json', i18n.locale );
-  //Call previewer-specific translation code
-  translateBaseHtmlPage();
+  i18n.load( 'i18n/' + i18n.locale + '.json', i18n.locale ).done(
+    function() {
+      //Call previewer-specific translation code
+      translateBaseHtmlPage();
+    }
+  );
   
 	if (apiKey != null) {
 		fileUrl = fileUrl + "&key=" + apiKey;
@@ -132,7 +135,7 @@ function addStandardPreviewHeader(file, title, authors) {
 
 	//Footer
 	var footer = $.i18n( "footer" );
-  $('body').append($('<div/>').html(footer)).attr('id','footer'));
+  $('body').append($('<div/>').html(footer).attr('id','footer'));
 
 	if (previewMode !== 'true') {
 	  //Translated text used in the preview header
