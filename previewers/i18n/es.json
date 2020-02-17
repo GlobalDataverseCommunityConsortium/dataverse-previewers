@@ -1,0 +1,22 @@
+{
+	"filenameText": "Nombre del fichero: ",
+	"inText": "En ",
+	"byText": ", por ",
+	"downloadFileText": "Descargar fichero",
+	"closePreviewText": "Cerrar previsualización",
+	"audioPreviewText": "Previsualización de audio",
+	"csvPreviewText": "Previsualización de csv",
+	"htmlPreviewText": "Previsualización de html",
+	"annotationsText": "Anotaciones",
+	"imagePreviewText": "Previsualización de imagen",
+	"pdfPreviewText": "Previsualización de pdf",
+	"spreadsheetViewerText": "Visor de hojas de cálculo",
+	"textPreviewText": "Previsualización de texto",
+	"videoPreviewText": "Previsualización de vídeo",
+	"prev": "Anterior",
+	"next": "Siguiente",
+	"pageText": "Página:",
+	"versionText": "versión",
+	"descriptionText": "Descripción: ",
+	"footer": "Previsualizadores desarrollados inicialmente por <a href=\"https://qdr.syr.edu\">QDR</a> y mantenidos por <a href=\"https://github.com/QualitativeDataRepository/dataverse-previewers\">https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Agradecemos tanto el feedback como las contribuciones."
+}
