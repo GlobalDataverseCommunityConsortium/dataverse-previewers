@@ -1,10 +1,14 @@
-# dataverse-previewers
-A collection of data file previewers that conform to the [Dataverse](https://dataverse.org) external tools interface
+# Dataverse Previewers
+A collection of data file previewers that conform to the [Dataverse](https://dataverse.org) external tools interface, originally developed by the [Qualitative Data Repository](https://qdr.syr.edu). Earlier versions of Dataverse (v4.11+) make previewers available through the external tools button on Dataset pages (left). Newer versions (v4.18+) also use previewers for embedded display on Datafile pages (right).
 
-![Preview common data types](https://github.com/QualitativeDataRepository/dataverse-previewers/blob/master/examples/datasetdisplay.png?raw=true)
+<img align="right" width="30%" src="https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers/blob/master/examples/previewInPage.PNG?raw=true">
+<img width="65%" src="https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers/blob/master/examples/datasetdisplay.png?raw=true">
+
 
 ## Installation
-These previewers can be run without downloading them by simply running the curl command(s) below to register then with your local dataverse instance. There is one command per mimetype you wish to preview (i.e. multiple commands to cover different types of images.) You can run any/all of the commands as you like. Note that the Hypothesis annotation previewer assumes a custom mimetype and may not be useful for most Dataverses (contact QDR for more information). Dataverse 4.11+ is required.
+These previewers can be run without downloading them by simply running the curl command(s) below to register then with your local dataverse instance. (You can also create local copies and register those). There is one command per mimetype you wish to preview (i.e. multiple commands to cover different types of images.) You can run any/all of the commands as you like. Note that the Hypothesis annotation previewer assumes a custom mimetype and may not be useful for most Dataverses (contact [QDR](mailto:qdr@syr.edu) for more information). Dataverse 4.11+ is required.
+
+Note that Dataverse installations configured to redirect to S3 storage for file downloads will need to enable CORS at the storage layer as well as the application layer (the latter is enabled by default). (See, for example, [Amazon's CORS configuration guidance](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/add-cors-configuration.html)).
 
 ## How do they work?
 The tools here are lightweight wrappers around standard HTML5 functionality (e.g. audio, video), or third-party libraries (pdf) or some combination (e.g. standard image displays with a third-party library to allow zooming, simple text/html displays with third-party libraries used to sanitize content to avoid security issues). 
@@ -15,20 +19,30 @@ They will also place your logo in the upper left corner (240px wide x 140px high
 
 ## Known Limitations:
 
-To preview restricted content, a user must have permission to view the relevant dataset version and download the relevant file and must have created an API Token for themselves in Dataverse. (Viewing public/published content does not require an API Token.) Note that API Tokens should be treated like passwords - if you use previewers on public computers, you may want to 'Recreate' your API Token afterward (to invalidate the previous one). Also note that API Tokens expire - you may need to 'Recreate' one if you have not used it in a while. 
+To preview restricted content, a user must have permission to view the relevant dataset version and download the relevant file and must have created an API Token for themselves in Dataverse. (Viewing public/published content does not require an API Token.) Note that API Tokens should be treated like passwords - if you use previewers on public computers, you may want to 'Recreate' your API Token afterward (to invalidate the previous one). Also note that API Tokens expire - you may need to 'Recreate' one if you have not used it in a while. (Note that later versions of Dataverse change API token management and should create/recreate API tokens as needed.)
 
 File creation date is only shown in the header for Dataverse v4.12+.
   
 Video seeking does not work on some browsers and some Dataverse instances due to the lack of support in some Dataverse storageIO drivers for partial file downloads. As of now, Seeking does not work in Chrome but does work in Firefox. Other browsers haven't been tested.
 
-## How can I help?
+The image previewer only works with image/tiff files on some browsers (as of ~Jan 2020), so the registration for that mimetype ha been removed from the list below.
+
+## Acknowledgements
 The original tools were developed through the [Qualitative Data Repository](https://qdr.syr.edu) but are being offered to the Dataverse community at large. 
 
 The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
 
-If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [qdr@syr.edu](mailto:qdr.syr.edu) or work through github to fork/make pull-requests against the repository.
+[pdurbin](https://github.com/pdurbin) updated the retriever.js script to allow previewers to be embedded directly in the Dataverse file pages.
 
-### Curl commands to configure these tools with your dataverse instance:
+## How can I help?
+
+If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [dataverse-dev@googlegroups.com](mailto:dataverse-dev@googlegroups.com) or work through github to fork/make pull-requests against the repository.
+
+Contributors are expected to keep the master branch in a 'production-ready' state, as Dataverse instances may be using the html, javascript, and css files there directly via their github.io URLs (see curl commands below).
+
+By commiting code to the repository, Contributors are agreeing to make it available under the [MIT Open Source license](https://globaldataversecommunityconsortium.github.io/dataverse-previewers/LICENSE).
+
+## Curl commands to configure these tools with your dataverse instance:
 You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
@@ -37,7 +51,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Read the text file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/TextPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/TextPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -56,7 +71,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"View the html file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/HtmlPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/HtmlPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -75,7 +91,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Listen to an audio file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/AudioPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/AudioPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -94,7 +111,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Listen to an audio file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/AudioPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/AudioPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -113,7 +131,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Preview an image file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -132,7 +151,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Preview an image file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -151,7 +171,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Preview an image file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/ImagePreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -166,30 +187,12 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
 >"{
->  \\"displayName\\":\\"View Image\\",
->  \\"description\\":\\"Preview an image file.\\",
->  \\"scope\\":\\"file\\",
->  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/ImagePreview.html\",
->  \\"toolParameters\\": {
->      \\"queryParameters\\":[
->        {\\"fileid\\":\\"{fileId}\\"},
->        {\\"siteUrl\\":\\"{siteUrl}\\"},
->        {\\"key\\":\\"{apiToken}\\"},
->        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
->      ]
->    },
->  \\"contentType\\":\\"image/tiff\\"
->}"
-
->curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
->"{
 >  \\"displayName\\":\\"Read Document\\",
 >  \\"description\\":\\"Read a pdf document.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/PDFPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/PDFPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -208,7 +211,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Watch a video file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -227,7 +231,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Watch a video file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -246,7 +251,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"Watch a video file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/VideoPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/VideoPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -265,7 +271,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"View the spreadsheet data.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -284,7 +291,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"description\\":\\"View the spreadsheet data.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -299,11 +307,52 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
 >"{
+>  \\"displayName\\":\\"View Stata File\\",
+>  \\"description\\":\\"View the Stata file as text.\\",
+>  \\"scope\\":\\"file\\",
+>  \\"type\\":\\"explore\\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/TextPreview.html\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>      ]
+>    },
+>  \\"contentType\\":\\"application/x-stata-syntax\\"
+>}"
+
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
+>  \\"displayName\\":\\"View R file\\",
+>  \\"description\\":\\"View the R file as text.\\",
+>  \\"scope\\":\\"file\\",
+>  \\"type\\":\\"explore\\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/TextPreview.html\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>      ]
+>    },
+>  \\"contentType\\":\\"type/x-r-syntax\\"
+>}"
+
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
 >  \\"displayName\\":\\"View Annotations\\",
 >  \\"description\\":\\"View the annotation entries in a file.\\",
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/HypothesisPreview.html\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/HypothesisPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
@@ -315,6 +364,7 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >    },
 >  \\"contentType\\":\\"application/x-json-hypothesis\\"
 >}"
+
 
 
 
