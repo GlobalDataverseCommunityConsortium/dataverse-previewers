@@ -59,7 +59,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"text/plain\\"
@@ -79,7 +80,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"text/html\\"
@@ -99,7 +101,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"audio/mp3\\"
@@ -119,7 +122,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"audio/ogg\\"
@@ -139,7 +143,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"image/gif\\"
@@ -159,7 +164,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"image/jpeg\\"
@@ -179,7 +185,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"image/png\\"
@@ -199,7 +206,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"application/pdf\\"
@@ -219,7 +227,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"video/mp4\\"
@@ -239,7 +248,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"video/ogg\\"
@@ -259,7 +269,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"video/quicktime\\"
@@ -279,7 +290,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"text/comma-separated-values\\"
@@ -299,7 +311,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"text/tab-separated-values\\"
@@ -319,7 +332,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"application/x-stata-syntax\\"
@@ -339,7 +353,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"type/x-r-syntax\\"
@@ -359,7 +374,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"application/x-json-hypothesis\\"
