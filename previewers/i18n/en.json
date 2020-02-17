@@ -2,6 +2,7 @@
 	"filenameText": "Filename: ",
 	"inText": "In ",
 	"byText": ", by ",
+  "uploadedOnText": "File uploaded on ",
 	"downloadFileText": "Download File",
 	"closePreviewText": "Close Preview",
 	"audioPreviewText": "Audio Preview",

@@ -25,6 +25,8 @@ function startPreview(retrieveFile) {
   }
   var i18n = $.i18n();
   i18n.locale=locale;
+  i18n.load( 'i18n/' + i18n.locale + '.json', i18n.locale );
+  translateBaseHtmlPage();
   
 	if (apiKey != null) {
 		fileUrl = fileUrl + "&key=" + apiKey;
@@ -123,16 +125,22 @@ function addStandardPreviewHeader(file, title, authors) {
 			.attr(
 					'onerror',
 					'this.onerror=null;this.src="/dataverse-previewers/previewers/images/logo_placeholder.png";');
-	//Footer
-    $('body').append($('<div/>').html("Previewers originally developed by <a href='https://qdr.syr.edu'>QDR</a> and maintained at <a href='https://github.com/QualitativeDataRepository/dataverse-previewers'>https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Feedback and contributions welcome.").attr('id','footer'));
-    var i18n = $.i18n();
+          
+    //Translated text used in the preview header
+          
     var filenameText = $.i18n( "filenameText" );
     var inText = $.i18n( "inText" );
     var byText = $.i18n( "byText" );
+    var uploadedOnText = $.i18n("uploadedOnText");
     var downloadFileText = $.i18n( "downloadFileText" );
     var closePreviewText = $.i18n( "closePreviewText" );
     var versionText = $.i18n( "versionText" );
     var descriptionText = $.i18n( "descriptionText" );
+    var footer = $.i18n( "footer" );
+
+	//Footer
+    $('body').append($('<div/>').html(footer)).attr('id','footer'));
+
 	
     filePageUrl = queryParams.get("siteUrl") + "/file.xhtml?";
 	if (file.persistentId.length == 0) {
@@ -142,13 +150,13 @@ function addStandardPreviewHeader(file, title, authors) {
 	}
 	filePageUrl = filePageUrl + "&version=" + version;
 	var header = $('.preview-header').append($('<div/>'));
-	header.append($("<div/>").append($("<span/>").attr('class', "filenameText").text(filenameText)).append(
+	header.append($("<div/>").append($("<span/>").text(filenameText)).append(
 			$('<a/>').attr('href', filePageUrl).text(file.filename)).attr('id',
 			'filename'));
 	if ((file.description != null) && (file.description.length > 0)) {
-		header.append($('<div/>').html("<span class=\"descriptionText\">" + descriptionText + "</span>" + file.description));
+		header.append($('<div/>').html("<span>" + descriptionText + "</span>" + file.description));
 	}
-	header.append($('<div/>').append($("<span/>").attr('class', "inText").text(inText)).append(
+	header.append($('<div/>').append($("<span/>").text(inText)).append(
 			$('<span/>').attr('id', 'dataset').append(
 					$('<a/>').attr(
 							'href',
@@ -156,22 +164,40 @@ function addStandardPreviewHeader(file, title, authors) {
 									+ "/dataset.xhtml?persistentId=doi:"
 									+ datasetUrl + "&version=" + version).text(
 							title))).append(
-			$('<span/>').html(" (<span class=\"versionText\">" + versionText + "</span> " + version + ")").attr('id', 'version')).append(
-			$('<span/>').text(byText).attr('class', 'byText')).append(
+			$('<span/>').html(" (<span>" + versionText + "</span> " + version + ")").attr('id', 'version')).append(
+			$('<span/>').text(byText)).append(
 			$('<span/>').text(authors).attr('id', 'authors')));
 	header.append($("<div/>").addClass("btn btn-default").html(
-			"<a class='downloadFileText' href='" + fileDownloadUrl + "'>" + downloadFileText + "</a>"));
+			"<a href='" + fileDownloadUrl + "'>" + downloadFileText + "</a>"));
 	header.append($("<div/>").addClass("btn btn-default").html(
-			"<a class=\"closePreviewText\" href=\"javascript:window.close();\">" + closePreviewText + "</a>"));
+			"<a href=\"javascript:window.close();\">" + closePreviewText + "</a>"));
 	if(file.creationDate != null) {
 		header.append($("<div/>").addClass("preview-note").text(
-			"File uploaded on " + file.creationDate));
+			uploadedOnText + file.creationDate));
 	}
 	if (previewMode === 'true') {
 		$('#logo').hide();
 		$('.page-title').hide();
 		$('.preview-header').hide();
 	}
+  
+}
+
+
+function translateBaseHtmlPage() {
+      var audioPreviewText = $.i18n( "audioPreviewText" ); $( '.audioPreviewText' ).text( audioPreviewText );
+      var csvPreviewText = $.i18n( "csvPreviewText" ); $( '.csvPreviewText' ).text( csvPreviewText );
+      var htmlPreviewText = $.i18n( "htmlPreviewText" ); $( '.htmlPreviewText' ).text( htmlPreviewText );
+      var annotationsText = $.i18n( "annotationsText" ); $( '.annotationsText' ).text( annotationsText );
+      var imagePreviewText = $.i18n( "imagePreviewText" ); $( '.imagePreviewText' ).text( imagePreviewText );
+      var spreadsheetViewerText = $.i18n( "spreadsheetViewerText" ); $( '.spreadsheetViewerText' ).text( spreadsheetViewerText );
+      var textPreviewText = $.i18n( "textPreviewText" ); $( '.textPreviewText' ).text( textPreviewText );
+      var videoPreviewText = $.i18n( "videoPreviewText" ); $( '.videoPreviewText' ).text( videoPreviewText );
+      //PDF Previewer has prev, next, and Page text on it along with the previewer title
+      var pdfPreviewText = $.i18n( "pdfPreviewText" ); $( '.pdfPreviewText' ).text( pdfPreviewText );
+      var prev = $.i18n( "prev" ); $( '#prev' ).text( prev );
+      var next = $.i18n( "next" ); $( '#next' ).text( next );
+      var pageText = $.i18n( "pageText" ); $( '.pageText' ).text( pageText );
 }
 
 function reportFailure(msg, statusCode) {

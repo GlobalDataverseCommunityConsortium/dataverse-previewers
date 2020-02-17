@@ -2,6 +2,7 @@
 	"filenameText": "Nombre del fichero: ",
 	"inText": "En ",
 	"byText": ", por ",
+  "uploadedOnText": "Fichero subido el ",
 	"downloadFileText": "Descargar fichero",
 	"closePreviewText": "Cerrar previsualización",
 	"audioPreviewText": "Previsualización de audio",
