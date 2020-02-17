@@ -3,11 +3,11 @@ var datasetUrl = null;
 var version = null;
 var fileDownloadUrl = null;
 var previewMode = false;
+var locale=null;
 
 function startPreview(retrieveFile) {
 	// Retrieve tool launch parameters from URL
-        var i18n = $.i18n();
-	i18n.locale="en";
+
 	queryParams = new URLSearchParams(window.location.search.substring(1));
 	var fileUrl = queryParams.get("siteUrl") + "/api/access/datafile/"
 			+ queryParams.get("fileid") + "?gbrecs=true";
@@ -19,6 +19,13 @@ function startPreview(retrieveFile) {
 	var apiKey = queryParams.get("key");
 	// Hide header and citation to embed on Dataverse file landing page.
 	previewMode = queryParams.get("preview");
+  locale = queryParams.get("locale");
+  if(locale== null) {
+    locale='en';
+  }
+  var i18n = $.i18n();
+  i18n.locale=locale;
+  
 	if (apiKey != null) {
 		fileUrl = fileUrl + "&key=" + apiKey;
 		versionUrl = versionUrl + "?key=" + apiKey;
