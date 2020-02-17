@@ -19,5 +19,6 @@
 	"pageText": "Page:",
 	"versionText": "version",
 	"descriptionText": "Description: ",
-	"footer": "Previewers originally developed by <a href=\"https://qdr.syr.edu\">QDR</a> and maintained at <a href=\"https://github.com/QualitativeDataRepository/dataverse-previewers\">https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Feedback and contributions welcome."
+	"footer": "Previewers originally developed by <a href=\"https://qdr.syr.edu\">QDR</a> and maintained at <a href=\"https://github.com/QualitativeDataRepository/dataverse-previewers\">https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Feedback and contributions welcome.",
+"errorText" : "Please try again. The most common issue is that your login has timed out. If the problem persists, please contact the support team of this data repository. Please include any status code included at the end of this message: "
 }

@@ -190,8 +190,11 @@ function addStandardPreviewHeader(file, title, authors) {
 function reportFailure(msg, statusCode) {
 	var preview = $(".preview");
 	preview.addClass("alert alert-danger");
+
+  var errorText = $.i18n( "errorText" );
+
 	preview
 			.text(msg
-					+ "Please try again. The most common issue is that your login has timed out. If the problem persists, please contact the support team of this data repository. Please include any status code included at the end of this message: "
+					+ errorText
 					+ statusCode);
 }
