@@ -6,7 +6,6 @@ $(document).ready(function() {
 function translateBaseHtmlPage() {
       var spreadsheetViewerText = $.i18n( "spreadsheetViewerText" ); 
       $( '.spreadsheetViewerText' ).text( spreadsheetViewerText );
-      
 }
 
 function writeContent(fileUrl, file, title, authors) {
