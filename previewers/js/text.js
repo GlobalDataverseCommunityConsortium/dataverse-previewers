@@ -2,6 +2,11 @@ $(document).ready(function() {
 startPreview(true);
 });
 
+function translateBaseHtmlPage() {
+      var textPreviewText = $.i18n( "textPreviewText" );
+      $( '.textPreviewText' ).text( textPreviewText );
+}
+
 function writeContentAndData(data, fileUrl, file, title, authors) {
     addStandardPreviewHeader(file,title, authors);
 //removing href and target attributes from the default

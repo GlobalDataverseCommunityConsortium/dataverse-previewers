@@ -26,6 +26,7 @@ function startPreview(retrieveFile) {
   var i18n = $.i18n();
   i18n.locale=locale;
   i18n.load( 'i18n/' + i18n.locale + '.json', i18n.locale );
+  //Call previewer-specific translation code
   translateBaseHtmlPage();
   
 	if (apiKey != null) {
@@ -181,23 +182,6 @@ function addStandardPreviewHeader(file, title, authors) {
 		$('.preview-header').hide();
 	}
   
-}
-
-
-function translateBaseHtmlPage() {
-      var audioPreviewText = $.i18n( "audioPreviewText" ); $( '.audioPreviewText' ).text( audioPreviewText );
-      var csvPreviewText = $.i18n( "csvPreviewText" ); $( '.csvPreviewText' ).text( csvPreviewText );
-      var htmlPreviewText = $.i18n( "htmlPreviewText" ); $( '.htmlPreviewText' ).text( htmlPreviewText );
-      var annotationsText = $.i18n( "annotationsText" ); $( '.annotationsText' ).text( annotationsText );
-      var imagePreviewText = $.i18n( "imagePreviewText" ); $( '.imagePreviewText' ).text( imagePreviewText );
-      var spreadsheetViewerText = $.i18n( "spreadsheetViewerText" ); $( '.spreadsheetViewerText' ).text( spreadsheetViewerText );
-      var textPreviewText = $.i18n( "textPreviewText" ); $( '.textPreviewText' ).text( textPreviewText );
-      var videoPreviewText = $.i18n( "videoPreviewText" ); $( '.videoPreviewText' ).text( videoPreviewText );
-      //PDF Previewer has prev, next, and Page text on it along with the previewer title
-      var pdfPreviewText = $.i18n( "pdfPreviewText" ); $( '.pdfPreviewText' ).text( pdfPreviewText );
-      var prev = $.i18n( "prev" ); $( '#prev' ).text( prev );
-      var next = $.i18n( "next" ); $( '#next' ).text( next );
-      var pageText = $.i18n( "pageText" ); $( '.pageText' ).text( pageText );
 }
 
 function reportFailure(msg, statusCode) {

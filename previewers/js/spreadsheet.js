@@ -3,6 +3,12 @@ $(document).ready(function() {
     startPreview(false);
 });
     
+function translateBaseHtmlPage() {
+      var spreadsheetViewerText = $.i18n( "spreadsheetViewerText" ); 
+      $( '.spreadsheetViewerText' ).text( spreadsheetViewerText );
+      
+}
+
 function writeContent(fileUrl, file, title, authors) {
     addStandardPreviewHeader(file, title, authors);
 

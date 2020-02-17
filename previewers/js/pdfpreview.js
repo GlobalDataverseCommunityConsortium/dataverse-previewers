@@ -17,6 +17,18 @@ document.getElementById('next').addEventListener('click', onNextPage);
 startPreview(false);
 });
 
+function translateBaseHtmlPage() {
+      //PDF Previewer has prev, next, and Page text on it along with the previewer title
+      var pdfPreviewText = $.i18n( "pdfPreviewText" ); 
+      $( '.pdfPreviewText' ).text( pdfPreviewText );
+      var prev = $.i18n( "prev" ); 
+      $( '#prev' ).text( prev );
+      var next = $.i18n( "next" ); 
+      $( '#next' ).text( next );
+      var pageText = $.i18n( "pageText" ); 
+      $( '.pageText' ).text( pageText );
+}
+
 function writeContent(fileUrl, file, title, authors) {
 addStandardPreviewHeader(file, title, authors);
 
