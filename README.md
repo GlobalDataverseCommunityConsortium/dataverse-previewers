@@ -126,6 +126,26 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
+>  \\"contentType\\":\\"audio/wav\\"
+>}"
+
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
+>  \\"displayName\\":\\"Play Audio\\",
+>  \\"description\\":\\"Listen to an audio file.\\",
+>  \\"scope\\":\\"file\\",
+>  \\"type\\":\\"explore\\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/AudioPreview.html\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>      ]
+>    },
 >  \\"contentType\\":\\"audio/ogg\\"
 >}"
 
