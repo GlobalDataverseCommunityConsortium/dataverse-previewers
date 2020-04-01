@@ -19,6 +19,6 @@
 	"pageText": "Page:",
 	"versionText": "version",
 	"descriptionText": "Description: ",
-	"footer": "Le prévisualisateur a été développé par <a href=\"https://qdr.syr.edu\">QDR</a> et est accessible au <a href=\"https://github.com/QualitativeDataRepository/dataverse-previewers\">https://github.com/QualitativeDataRepository/dataverse-previewers</a>. Vos commentaires et contributions sont les bienvenues.",
+	"footer": "Le prévisualisateur a été développé par <a href=\"https://qdr.syr.edu\">QDR</a> et est accessible au <a href=\"https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers\">https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers</a>. Vos commentaires et contributions sont les bienvenues.",
 	"errorText" : "Veuillez réessayer. Le problème le plus commun est que votre session a expiré. Si le problème persiste, veuillez communiquer avec l'équipe de soutien pour ce dépôt de données. Veuillez fournir le code indiqué à la fin du présent message : "
 }
