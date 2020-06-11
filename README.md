@@ -121,14 +121,15 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >  \\"scope\\":\\"file\\",
 >  \\"type\\":\\"explore\\",
 >  \\"hasPreviewMode\\":\\"true\\",
->  \\"toolUrl\\":\\"https://qualitativedatarepository.github.io/dataverse-previewers/previewers/AudioPreview.html\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/AudioPreview.html\",
 >  \\"toolParameters\\": {
 >      \\"queryParameters\\":[
 >        {\\"fileid\\":\\"{fileId}\\"},
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"audio/mpeg\\"
@@ -169,7 +170,8 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 >        {\\"siteUrl\\":\\"{siteUrl}\\"},
 >        {\\"key\\":\\"{apiToken}\\"},
 >        {\\"datasetid\\":\\"{datasetId}\\"},
->        {\\"datasetversion\\":\\"{datasetVersion}\\"}
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
 >      ]
 >    },
 >  \\"contentType\\":\\"audio/ogg\\"
