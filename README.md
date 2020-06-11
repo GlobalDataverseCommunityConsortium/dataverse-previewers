@@ -11,7 +11,7 @@ These previewers can be run without downloading them by simply running the curl 
 Note that Dataverse installations configured to redirect to S3 storage for file downloads will need to enable CORS at the storage layer as well as the application layer (the latter is enabled by default). (See, for example, [Amazon's CORS configuration guidance](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/add-cors-configuration.html)).
 
 ## How do they work?
-The tools here are lightweight wrappers around standard HTML5 functionality (e.g. audio, video), or third-party libraries (pdf) or some combination (e.g. standard image displays with a third-party library to allow zooming, simple text/html displays with third-party libraries used to sanitize content to avoid security issues). 
+The tools here are lightweight wrappers around standard HTML5 functionality (e.g. audio, video), or third-party libraries (pdf, spreadsheets) or some combination (e.g. standard image displays with a third-party library to allow zooming, simple text/html displays with third-party libraries used to sanitize content to avoid security issues). 
 
 ## Customizations: 
 The previewers will use your favicon if it exists at the default Dataverse location: ```<your site URL>/javax.faces.resource/images/favicondataverse.png.xhtml```
@@ -25,9 +25,9 @@ File creation date is only shown in the header for Dataverse v4.12+.
   
 Video seeking does not work on some browsers and some Dataverse instances due to the lack of support in some Dataverse storageIO drivers for partial file downloads. As of now, Seeking does not work in Chrome but does work in Firefox. Other browsers haven't been tested.
 
-The image previewer only works with image/tiff files on some browsers (as of ~Jan 2020), so the registration for that mimetype ha been removed from the list below.
+The image previewer only works with image/tiff files on some browsers (as of ~Jan 2020), so the registration for that mimetype has been removed from the list below.
 
-## Acknowledgements
+## Acknowledgments
 The original tools were developed through the [Qualitative Data Repository](https://qdr.syr.edu) but are being offered to the Dataverse community at large. 
 
 The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/anncie-pcss).
@@ -42,11 +42,13 @@ The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/an
 
 If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [dataverse-dev@googlegroups.com](mailto:dataverse-dev@googlegroups.com) or work through github to fork/make pull-requests against the repository.
 
+The wiki now contains a [How To Create a Previewer](https://github.com/GlobalDataverseCommunityConsortium/dataverse-previewers/wiki/How-to-create-a-previewer) page that provides a detailed guide to developing new previewers starting from the existing HTML/Javascript templates. (You can also build previewers using any language you choose, starting from the External Tools API in Dataverse.)
+
 Contributors are expected to keep the master branch in a 'production-ready' state, as Dataverse instances may be using the html, javascript, and css files there directly via their github.io URLs (see curl commands below).
 
-By commiting code to the repository, Contributors are agreeing to make it available under the [MIT Open Source license](https://globaldataversecommunityconsortium.github.io/dataverse-previewers/LICENSE).
+By committing code to the repository, Contributors are agreeing to make it available under the [MIT Open Source license](https://globaldataversecommunityconsortium.github.io/dataverse-previewers/LICENSE).
 
-## Curl commands to configure these tools with your dataverse instance:
+## Curl commands to configure these tools with your Dataverse instance:
 You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
