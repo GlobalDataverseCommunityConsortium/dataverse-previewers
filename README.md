@@ -6,9 +6,15 @@ A collection of data file previewers that conform to the [Dataverse](https://dat
 
 
 ## Installation
-These previewers can be run without downloading them by simply running the curl command(s) below to register then with your local dataverse instance. (You can also create local copies and register those). There is one command per mimetype you wish to preview (i.e. multiple commands to cover different types of images.) You can run any/all of the commands as you like. Note that the Hypothesis annotation previewer assumes a custom mimetype and may not be useful for most Dataverses (contact [QDR](mailto:qdr@syr.edu) for more information). Dataverse 4.11+ is required.
+These previewers can be run without downloading them by simply running the curl command(s) below to register then with your local dataverse instance. (You can also create local copies and register those).
+
+For updates such as enabling Internationalization, which change the parameters you need to register with (Internationalization requires that Dataverse send the localeCode to the previewers), you'll need to delete the registrations for existing previewers (using the Dataverse externalTools API) and re-register them again using the updated curl commands below.  
+
+There is one command per mimetype you wish to preview (i.e. multiple commands to cover different types of images.) You can run any/all of the commands as you like. Note that the Hypothesis annotation previewer assumes a custom mimetype and may not be useful for most Dataverses (contact [QDR](mailto:qdr@syr.edu) for more information). Dataverse 4.11+ is required.
 
 Note that Dataverse installations configured to redirect to S3 storage for file downloads will need to enable CORS at the storage layer as well as the application layer (the latter is enabled by default). (See, for example, [Amazon's CORS configuration guidance](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/add-cors-configuration.html)).
+
+Also note that using the commands below means that your installation will automatically start using updated versions of the previewers when the master branch of this repository is updated. We intend to announce upcoming changes on the dataverse-community@google-groups.com mailing list, but if you do not want this behavior, you can download the previewers and host them on your own server, adjusting the curl commands below to reference your local copies. 
 
 ## How do they work?
 The tools here are lightweight wrappers around standard HTML5 functionality (e.g. audio, video), or third-party libraries (pdf, spreadsheets) or some combination (e.g. standard image displays with a third-party library to allow zooming, simple text/html displays with third-party libraries used to sanitize content to avoid security issues). 
