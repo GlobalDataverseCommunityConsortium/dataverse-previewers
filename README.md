@@ -34,6 +34,10 @@ The Spreadsheet Previewer was contributed by [anncie-pcss](https://github.com/an
 
 [pdurbin](https://github.com/pdurbin) updated the retriever.js script to allow previewers to be embedded directly in the Dataverse file pages.
 
+[juancorr](https://github.com/juancorr) added internationlization and provided a Spanish translation for the existing previewers.
+
+[kaitlinnewson](https://github.com/kaitlinnewson) provided a French translation for the existing previewers.
+
 ## How can I help?
 
 If you are interested in adding additional previewers, or in maintaining/enhancing existing ones, contact us at [dataverse-dev@googlegroups.com](mailto:dataverse-dev@googlegroups.com) or work through github to fork/make pull-requests against the repository.
