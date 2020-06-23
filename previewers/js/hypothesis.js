@@ -3,6 +3,11 @@ $(document).ready(function() {
 startPreview(true);
 });
 
+function translateBaseHtmlPage() {
+      var annotationsText = $.i18n( "annotationsText" );
+      $( '.annotationsText' ).text( annotationsText );
+}
+
 function writeContentAndData(data, fileUrl, file, title, authors) {
     addStandardPreviewHeader(file,title, authors);
     
