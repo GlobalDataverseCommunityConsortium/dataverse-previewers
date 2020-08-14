@@ -14,7 +14,7 @@
     color: darkslategray;
     overflow-wrap: break-word;
     margin-bottom: 10px;
-    background: #ECF6FB;
+    background: #fcfeff;
     border-color: #9acfea;
     border-style: solid;
     border-width: 1px;
@@ -46,6 +46,7 @@
 .preview {
     margin: 0 auto;
     padding: 10px 10px 5px 10px;
+    overflow-y: scroll;
 }
 
 .preview audio {
