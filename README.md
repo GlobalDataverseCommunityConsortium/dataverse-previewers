@@ -374,6 +374,49 @@ You should be able to cut/paste any/all of the commands below to run on your Dat
 
 >curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
 >"{
+>  \\"displayName\\":\\"View Data\\",
+>  \\"description\\":\\"View the spreadsheet data.\\",
+>  \\"scope\\":\\"file\\",
+>  \\"type\\":\\"explore\\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
+>      ]
+>    },
+>  \\"contentType\\":\\"text/csv\\"
+>}"
+
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
+>  \\"displayName\\":\\"View Data\\",
+>  \\"description\\":\\"View the spreadsheet data.\\",
+>  \\"scope\\":\\"file\\",
+>  \\"type\\":\\"explore\\",
+>  \\"hasPreviewMode\\":\\"true\\",
+>  \\"toolUrl\\":\\"https://globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers/SpreadsheetPreview.html\",
+>  \\"toolParameters\\": {
+>      \\"queryParameters\\":[
+>        {\\"fileid\\":\\"{fileId}\\"},
+>        {\\"siteUrl\\":\\"{siteUrl}\\"},
+>        {\\"key\\":\\"{apiToken}\\"},
+>        {\\"datasetid\\":\\"{datasetId}\\"},
+>        {\\"datasetversion\\":\\"{datasetVersion}\\"},
+>        {\\"locale\\":\\"{localeCode}\\"}
+>      ]
+>    },
+>  \\"contentType\\":\\"text/tsv\\"
+>}"
+
+
+>curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \\
+>"{
 >  \\"displayName\\":\\"View Stata File\\",
 >  \\"description\\":\\"View the Stata file as text.\\",
 >  \\"scope\\":\\"file\\",
