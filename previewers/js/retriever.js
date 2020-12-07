@@ -138,6 +138,8 @@ function addStandardPreviewHeader(file, title, authors) {
   $('body').append($('<div/>').html(footer).attr('id','footer'));
 
 	if (previewMode !== 'true') {
+		
+    options = {"stripIgnoreTag":true, "stripIgnoreTagBody":['script','head']};  // Custom rules
 	  //Translated text used in the preview header
           
     var filenameText = $.i18n( "filenameText" );
@@ -161,7 +163,7 @@ function addStandardPreviewHeader(file, title, authors) {
 			$('<a/>').attr('href', filePageUrl).text(file.filename)).attr('id',
 			'filename'));
 	  if ((file.description != null) && (file.description.length > 0)) {
-		  header.append($('<div/>').html("<span>" + descriptionText + "</span>" + file.description));
+		  header.append($('<div/>').html(filterXSS("<span>" + descriptionText + "</span>" + file.description), options));
 	  }
 	  header.append($('<div/>').append($("<span/>").text(inText)).append(
 			$('<span/>').attr('id', 'dataset').append(
