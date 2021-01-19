@@ -28,18 +28,19 @@ function writeContent(fileUrl, file, title, authors) {
 
           handsontableContainer.innerHTML = '';
           handsontableContainer.className = '';
-      
+
           Handsontable(handsontableContainer, {
             data: data.data,
+            width: '100%',
+            height: '50vh',
             rowHeaders: true,
             colHeaders: Object.keys(data.data[0]),
-            columnSorting: true
+            columnSorting: true,
+            licenseKey: 'non-commercial-and-evaluation'
           })
         }
-      
+
         reader.readAsText(request.response);
     };
     request.send();
 }
-
-    
