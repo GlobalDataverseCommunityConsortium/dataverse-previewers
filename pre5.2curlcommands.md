@@ -3,14 +3,14 @@
 You should be able to cut/paste any/all of the commands below to run on your Dataverse machine:
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Read Text",
   "description":"Read the text file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/TextPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/TextPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -26,14 +26,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Html",
   "description":"View the html file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/HtmlPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/HtmlPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -49,14 +49,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Play Audio",
   "description":"Listen to an audio file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/AudioPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/AudioPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -72,14 +72,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Play Audio",
   "description":"Listen to an audio file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/AudioPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/AudioPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -95,14 +95,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Play Audio",
   "description":"Listen to an audio file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/AudioPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/AudioPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -118,14 +118,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Play Audio",
   "description":"Listen to an audio file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/AudioPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/AudioPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -141,14 +141,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Image",
   "description":"Preview an image file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/ImagePreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/ImagePreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -164,14 +164,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Image",
   "description":"Preview an image file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/ImagePreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/ImagePreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -187,14 +187,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Image",
   "description":"Preview an image file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/ImagePreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/ImagePreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -210,14 +210,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Read Document",
   "description":"Read a pdf document.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/PDFPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/PDFPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -233,14 +233,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Play Video",
   "description":"Watch a video file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/VideoPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/VideoPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -256,14 +256,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Play Video",
   "description":"Watch a video file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/VideoPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/VideoPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -279,14 +279,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"Play Video",
   "description":"Watch a video file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/VideoPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/VideoPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -302,14 +302,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Data",
   "description":"View the spreadsheet data.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/SpreadsheetPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/SpreadsheetPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -325,14 +325,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Data",
   "description":"View the spreadsheet data.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/SpreadsheetPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/SpreadsheetPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -348,14 +348,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Data",
   "description":"View the spreadsheet data.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/SpreadsheetPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/SpreadsheetPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -371,14 +371,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Data",
   "description":"View the spreadsheet data.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/SpreadsheetPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/SpreadsheetPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -394,14 +394,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Stata File",
   "description":"View the Stata file as text.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/TextPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/TextPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -417,14 +417,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View R file",
   "description":"View the R file as text.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/TextPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/TextPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
@@ -440,14 +440,14 @@ curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin
 ```
 
 ```bash
-curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \ 
+curl -X POST -H 'Content-type: application/json' http://localhost:8080/api/admin/externalTools -d \
 '{
   "displayName":"View Annotations",
   "description":"View the annotation entries in a file.",
   "scope":"file",
   "type":"explore",
   "hasPreviewMode":"true",
-  "toolUrl":"https://gdcc.github.io/dataverse-previewers/v1.1/previewers/HypothesisPreview.html",
+  "toolUrl":"https://gdcc.github.io/dataverse-previewers/previewers/v1.1/HypothesisPreview.html",
   "toolParameters": {
       "queryParameters":[
         {"fileid":"{fileId}"},
