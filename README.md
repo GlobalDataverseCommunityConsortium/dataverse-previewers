@@ -17,6 +17,26 @@ Note that Dataverse installations configured to redirect to S3 storage for file 
 
 Also note that using the commands below means that your installation will automatically start using updated versions of the previewers when the master branch of this repository is updated. We intend to announce upcoming changes on the dataverse-community@google-groups.com mailing list, but if you do not want this behavior, you can download the previewers and host them on your own server, adjusting the curl commands below to reference your local copies.
 
+## Updates
+
+There are two options to update to new versions:
+
+##### API Method
+
+Use the Dataverse API to list all of the registered previewers and to then delete each old version. Then follow the new installation instructions
+
+    curl http://localhost:8080/api/admin/externalTools
+and, for each tool registered, delete them by id number:
+
+    curl -X DELETE http://localhost:8080/api/admin/externalTools/<id>
+
+##### Database method
+
+Alternately, one can update the toolurl column in the externaltool table via SQL to change the repository and/or the version used. For example:
+
+    update externaltool set toolurl=REPLACE(toolurl, 'globaldataversecommunityconsortium.github.io/dataverse-previewers/previewers', 'gdcc.github.io/dataverse-previewers/previewers/v1.1');
+
+
 ## How do they work?
 
 The tools here are lightweight wrappers around standard HTML5 functionality (e.g. audio, video), or third-party libraries (pdf, spreadsheets) or some combination (e.g. standard image displays with a third-party library to allow zooming, simple text/html displays with third-party libraries used to sanitize content to avoid security issues).
