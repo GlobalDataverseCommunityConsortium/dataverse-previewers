@@ -1,3 +1,5 @@
+# The previewers are now hosted at https://github.com/gdcc/dataverse-previewers. This repository is strictly to support installations using previewers from this repository's github.io pages. All Pull Requests and Issues should be made to the new repository.
+
 # Dataverse Previewers
 A collection of data file previewers that conform to the [Dataverse](https://dataverse.org) external tools interface, originally developed by the [Qualitative Data Repository](https://qdr.syr.edu). Earlier versions of Dataverse (v4.11+) make previewers available through the external tools button on Dataset pages (left). Newer versions (v4.18+) also use previewers for embedded display on Datafile pages (right).
 
