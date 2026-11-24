@@ -1,0 +1,158 @@
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:          <http://www.w3.org/ns/shacl#> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema:      <http://schema.org/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix cdifd: <https://cdif.org/validation/0.1/shacl#> .
+@base <https://www.ogc.org/rules/template/> .
+
+cdifd:CDIFDatasetMandatoryShape a sh:NodeShape ;
+# only apply to elements that are child of root dataset 
+	sh:target [
+	  a sh:SPARQLTarget ;
+	  sh:prefixes (
+         [ sh:prefix "schema" ; sh:namespace "http://schema.org/" ]
+         [ sh:prefix "ex" ; sh:namespace "https://example.org/" ]
+       );
+# do we need to deal with schema:Dataset with parent = @graph? pyshacl work with these rules 
+#  for graph serialization.
+    sh:select """
+       PREFIX schema: <http://schema.org/>
+       PREFIX ex: <https://example.org/>
+            SELECT ?this
+            WHERE {
+              ?this a schema:Dataset .
+              MINUS {
+                ?parent a schema:Dataset .
+                ?parent ?p ?this .
+                FILTER (?parent != ?this)
+                FILTER (?p != schema:about)
+              }
+            }
+          """ ;
+	] ;
+		
+    sh:property	
+		cdifd:resourceIdentifierProperty,
+		cdifd:nameProperty,
+		cdifd:rightsProperty,
+		cdifd:dateModifiedProperty
+.
+
+cdifd:resourceIdentifierProperty
+# identifier for the resource described by the graph node, implement as either xsd:string or 
+# schema:PropertyValue with required [either scheme:url or schema:value]
+    a sh:PropertyShape ;
+    sh:path schema:identifier ;
+	sh:minCount 1 ;
+	sh:or ( 
+		[sh:datatype xsd:string ;]
+		[sh:class  schema:PropertyValue ;
+			sh:property 
+				[sh:path schema:propertyID ;
+				  sh:datatype xsd:string ;
+				  sh:severity sh:Warning ;
+				  sh:message "If specifying an identifier via the PropertyValue, the scheme (authority, domain) within which the identifier is assigned and unique must be identifed, either by name or preferably using a URI. See https://registry.identifiers.org/registry"
+				];
+			sh:or (
+			   [sh:property 
+				[sh:path schema:url ;
+				  sh:datatype xsd:string ;
+				  sh:message "if possible, provide a resolvable URI that will provide a representation of the identified resource."
+				]]
+			   [sh:property 
+				[sh:path schema:value ;
+				  sh:datatype xsd:string ;
+				  sh:message "The identifer string; include applicable prefix (e.g. doi:, ark:, http:, isbn:)"
+				]]
+				)
+			]
+		);
+    sh:message "An identifier for the documented resource must be provided" 
+    .
+
+cdifd:nameProperty
+# names must be a literal, .
+    a sh:PropertyShape ;
+    sh:path schema:name;
+	sh:minCount 1 ;
+    sh:datatype xsd:string ;
+	sh:minLength 5 ;
+    sh:message "a name for the person must be provided, and have a length of at least 5 characters." 
+    .
+    
+cdifd:rightsProperty	
+	a sh:PropertyShape ;
+# some indication of rights is required, either a license or statement on conditions of access
+	sh:path [sh:alternativePath ( schema:license  schema:conditionsOfAccess ) ];
+	sh:or (
+		[sh:nodeKind sh:IRI ]
+		[sh:datatype xsd:string ]
+# use schema:CreativeWork to implement a labeled link, only URL is required, but schema:name is expected
+		[sh:class schema:CreativeWork;
+		  sh:property 
+				[
+                    sh:path schema:url ;
+                    sh:minCount 1 ;
+                    sh:datatype xsd:string ;
+                    # sh:pattern "^[a-zA-Z][a-zA-Z0-9+.-]*:[^\\s]*$";
+                    sh:pattern "^https?:\\/\\/[^\\s]+$" ;
+                    sh:message "value must be a resolvable URL, but we aren't testing to see if the URL resolves..... Can't get xsd:anyURI to work with JSON Schema validation..."
+                   ]
+         ] 
+	);
+	sh:minCount 1 ;
+	sh:message "To meet the requirements for FAIR data, information about licenses or other security, usage, or access limitations must be described" 
+	.
+	
+cdifd:dateModifiedProperty
+    a sh:PropertyShape ;
+    sh:path schema:dateModified;
+	# pyshacl doesn't seem to work validating xsd:date or xsd:dateTime in JSON-LD
+    # sh:datatype xsd:dateTime ;
+	sh:minCount 1 ;
+	sh:datatype xsd:string ;
+	# messy regex to screen for ISO8601 formats
+	sh:pattern "^[1-2][0-9]{3}-([0][1-9]|[1][0-2])(-([0-2][0-9]|[3][0-1])(T([0-1][0-9]|[2][0-3]):[0-5][0-9](:[0-5][0-9](Z|[+-][0-2][0-9]:[0-5][0-9])?)?)?)?$" ;
+    sh:message "Date of most recent update to resource content is required, using ISO8601 format with at least a year and a month." 
+    .
+    
+cdifd:CDIFMetaMetadataShape
+    a sh:NodeShape ;
+    # only apply to dataset nodes that are 'about' a dataset node. Need to refine rule so 'about' is the
+    # root node of the containing resource. Parent might be any of the allowed resource types for CDIF
+	sh:target [
+	  a sh:SPARQLTarget ;
+        sh:select  """
+            PREFIX schema: <http://schema.org/>
+            SELECT ?this
+            WHERE {
+            ?this a schema:Dataset ;
+             schema:about ?parent.
+            }
+        """;
+	] ;
+	sh:nodeKind sh:IRI ;
+	sh:property cdifd:metadataProfileProperty ;
+	sh:property cdifd:metadataSubjectProperty ;
+	sh:message "The target of the metadata record (about)." 
+	.
+
+cdifd:metadataProfileProperty
+# Metadata needs to identify conventions followed in the serialization of this record.
+    a sh:PropertyShape ;
+    sh:path  dcterms:conformsTo  ;
+	sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+    sh:message "provide identifiers for specifications used in this record to provide guidance for machine agents processing the metadata record" 
+    .
+    
+cdifd:metadataSubjectProperty
+# Metadata needs to identify conventions followed in the serialization of this record.
+    a sh:PropertyShape ;
+    sh:path  schema:about  ;
+    sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
+    sh:message "link to the target of the metadata metadata node using the about property" 
+    .

@@ -1,0 +1,185 @@
+/* 
+* Custom CSS for Jupyter Notebook styling
+* Mimics the appearance and layout of Jupyter notebooks to provide familiar user experience
+*/
+
+/* CSS custom properties for consistent spacing throughout the notebook */
+:root {
+    --notebook-padding: 0.4em;
+}
+
+/* 
+* Heading styles with visual hierarchy and full-width underlines
+* Creates clear section separation similar to rendered Jupyter markdown cells
+*/
+#notebook h1,
+#notebook h2,
+#notebook h3,
+#notebook h4,
+#notebook h5,
+#notebook h6 {
+    padding-top: var(--notebook-padding);
+    padding-bottom: var(--notebook-padding);
+    border-bottom: 2px solid #ddd;
+    width: 100%;
+    margin-bottom: var(--notebook-padding);
+}
+
+/* Primary heading with prominent underline for document structure */
+#notebook h1 {
+    border-bottom-width: 3px;
+    border-bottom-color: #333;
+}
+
+/* Secondary heading with medium emphasis */
+#notebook h2 {
+    border-bottom-width: 2px;
+    border-bottom-color: #666;
+}
+
+/* Tertiary and lower headings with subtle underlines */
+#notebook h3,
+#notebook h4,
+#notebook h5,
+#notebook h6 {
+    border-bottom-width: 1px;
+    border-bottom-color: #999;
+}
+
+/* Paragraph styling for readable text flow in markdown cells */
+#notebook p {
+    margin-bottom: var(--notebook-padding);
+    line-height: 1.6;
+}
+
+/* Base cell styling with clean background and transparent borders */
+.nb-cell {
+    border: 1px solid transparent;
+    background: #fff;
+}
+
+/* 
+         * Input cell layout using flexbox for proper alignment
+         * Ensures prompt numbers and code content are properly positioned
+         */
+#notebook .input {
+    page-break-inside: avoid;
+    display: flex;
+    flex-direction: row;
+}
+
+/* 
+         * Prompt styling for input/output cell numbers
+         * Maintains consistent width and right-alignment for clean appearance
+         */
+#notebook .prompt {
+    min-width: 14ex;
+    padding: var(--notebook-padding);
+    margin: 0;
+    font-family: monospace;
+    text-align: right;
+    line-height: 1.21429em;
+    color: #303f9f;
+    flex: 0 0 auto;
+}
+
+/* Inner cell content area that expands to fill available space */
+#notebook .inner_cell {
+    flex: 1 1 auto;
+}
+
+/* 
+         * Code block styling for consistent monospace presentation
+         * Provides syntax highlighting background and proper spacing
+         */
+#notebook pre {
+    padding: var(--notebook-padding);
+    margin: 0;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.21429em;
+    overflow: auto;
+    background: #f7f7f7;
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+}
+
+/* 
+* Output cell styling with distinctive left border and background
+* Visually separates output from input cells for better readability
+*/
+.nb-output {
+    margin: var(--notebook-padding);
+    padding: var(--notebook-padding);
+    background: #fafafa;
+    border-left: 3px solid #e0e0e0;
+    border-radius: 2px;
+    border: 1px solid #cfcfcf;
+    position: relative;
+}
+
+/* Output label for clear identification of cell output sections */
+.nb-output::before {
+    content: "Output:";
+    display: block;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Input cell container with consistent spacing and positioning */
+.nb-input {
+    margin-top: var(--notebook-padding);
+    margin-bottom: var(--notebook-padding);
+    padding: var(--notebook-padding);
+    position: relative;
+}
+
+/* Input label styling for consistency with output labels */
+.nb-input::before {
+    display: block;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Output-specific code block styling with cleaner appearance */
+.nb-output pre {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+}
+
+/* Markdown cell styling for text content with appropriate padding */
+.nb-markdown-cell {
+    padding: var(--notebook-padding) var(--notebook-padding);
+}
+
+/* Responsive image handling to prevent overflow in notebook content */
+#notebook img {
+    max-width: 100%;
+}
+
+/* 
+* Table styling for data presentation in notebook outputs
+* Provides clean, readable formatting for tabular data commonly found in data science notebooks
+*/
+#notebook table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#notebook table tr {
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+}
+
+#notebook table th,
+#notebook table td {
+    padding: var(--notebook-padding) var(--notebook-padding);
+    border: 1px solid #ddd;
+}

@@ -1,0 +1,206 @@
+.page-title {
+    display: inline-block;
+    width: 58%;
+    text-align: center;
+    font-size: 36px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+.page-title a {
+    color: #56B7CB;
+}
+
+/* Much of .preview-header styling is to replace bootstrap styling.
+This should allow previewers to not use bootstrap which could potentially interfere with the display of the contents.
+This has been done for the Rich Html Previewer, which also has the reverse issue 
+- without these scoped stylings, the content styling could interfere with the header.
+*/
+.preview-header {
+    font-size: 14px;
+    font-family: sans-serif;
+    color: darkslategray;
+    overflow-wrap: break-word;
+    margin-bottom: 10px;
+    background: #fcfeff;
+    border-color: #9acfea;
+    border-style: solid;
+    border-width: 1px;
+    padding: 15px 15px 5px 15px;
+}
+
+@media (min-width: 992px) {
+    .preview-header.container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 768px) {
+    preview-header.container {
+        width: 750px;
+    }
+}
+
+.preview-header.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.preview-header .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.preview-header .btn-default {
+    background-color: white;
+    padding: 6px 12px;
+    border-color: #ccc;
+}
+
+.preview-header a {
+    color: #2D6A9F;
+}
+
+.preview-header div {
+    margin: 10px 5px 5px 0px;
+}
+
+.preview-header .center {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    color: chocolate;
+}
+
+.preview-header #filename {
+    font-size: 16px;
+}
+
+.preview-header #dataset {
+    font-style: italic;
+}
+
+.preview-note {
+    float: right;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.preview-container {
+    margin-left: 40px;
+}
+
+.preview {
+    margin: 0 auto;
+    padding: 10px 10px 5px 10px;
+}
+
+.preview audio {
+    margin: 20px auto;
+    display: table;
+}
+
+.preview video {
+    margin: 20px auto;
+    min-width: 600px;
+    display: table;
+}
+
+#logo {
+    display: inline-block;
+    margin-left: 40px;
+    width: 240px;
+    min-height: 140px;
+    vertical-align: middle;
+}
+
+#preview-footer {
+    font-size: x-small;
+    float: right;
+}
+
+.annotation-note {
+    float: right;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.annotation-card {
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 400;
+    border: 1px solid #ececec;
+    list-style: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    background: #fff;
+    overflow-wrap: break-word;
+}
+
+.annotation-card__text {
+    overflow-wrap: break-word;
+}
+
+.annotation-card__text img {
+    max-width: 100%;
+}
+
+.annotation-card__quote {
+    padding: 0 10px;
+    overflow-wrap: break-word;
+    color: #757575;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: .1px;
+    border-left: 3px solid #dbdbdb;
+    margin-bottom: 10px;
+}
+
+.annotation-card__tags {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.annotation-card__tag {
+    text-decoration: none;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    padding: 0 5px 2px;
+    color: #7a7a7a;
+    background: #f2f2f2;
+    margin: 0 5px 5px 0;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.annotation_raw {
+    max-height: 500px;
+    word-break: break-all;
+    overflow-y: auto;
+}

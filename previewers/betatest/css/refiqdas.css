@@ -1,0 +1,110 @@
+
+.selection-tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted #666;
+}
+
+.selection-tooltip .tooltip-content {
+  visibility: hidden;
+  width: 400px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -200px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  line-height: 1.4;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.selection-tooltip .tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.selection-tooltip:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-loading {
+  font-style: italic;
+  color: #ccc;
+}
+
+.tooltip-error {
+  color: #ffaaaa;
+}
+
+.tooltip-positions {
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #777;
+}
+
+.tooltip-text {
+  margin-top: 5px;
+}
+
+label {
+  margin-left:5px;
+}
+
+.redacted-notice {
+  background-color: #fffbe6; /* A light yellow background */
+  border: 1px solid #ffe58f; /* A slightly darker yellow border */
+  border-radius: 4px;        /* Softens the corners */
+  padding: 15px;             /* Adds space inside the box */
+  margin-bottom: 20px;       /* Adds space below the notice */
+  color: #8a6d3b;            /* A dark, brownish-yellow text color for good contrast */
+  text-align: center;        /* Centers the notice text */
+  font-weight: bold;         /* Makes the text bold */
+}
+
+#waiting {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    z-index: 9999;
+    text-align: center;
+    min-width: 280px;
+    max-width: 90%;
+}
+
+#waiting img {
+    display: block;
+    margin: 0 auto 15px;
+    height: 64px;
+}
+
+#waiting span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-top: 10px;
+}

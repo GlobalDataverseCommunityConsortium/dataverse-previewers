@@ -1,0 +1,48 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "H5Web demo",
+  "author": "European Synchrotron Radiation Facility",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silx-kit/h5web"
+  },
+  "engines": {
+    "node": "18.x",
+    "pnpm": "7.x"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview --port 5173",
+    "lint:eslint": "eslint \"**/*.{js,cjs,ts,tsx}\" --max-warnings=0",
+    "lint:tsc": "tsc"
+  },
+  "dependencies": {
+    "@h5web/app": "15.x",
+    "@h5web/h5wasm": "15.x",
+    "axios": "1.20.0",
+    "axios-hooks": "5.1.1",
+    "normalize.css": "8.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-dropzone": "14.2.3",
+    "react-icons": "4.8.0",
+    "react-router-dom": "7.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^17.0.56",
+    "@types/react-dom": "^17.0.19",
+    "@types/react-router-dom": "5.3.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "eslint": "8.28.0",
+    "eslint-config-galex": "4.4.2",
+    "typescript": "4.9.4",
+    "vite": "8.3.5",
+    "vite-plugin-checker": "0.5.6",
+    "vite-plugin-eslint": "1.8.1"
+  }
+}

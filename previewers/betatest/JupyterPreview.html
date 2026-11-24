@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Jupyter Notebook previewer for Dataverse - renders .ipynb files with syntax highlighting, markdown support, and mathematical expressions">
+
+    <!-- Page title - dynamically updated via i18n -->
+    <title class="jupyterPreviewText">Jupyter Notebook Preview</title>
+
+    <!-- Core JavaScript libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/xss.js"></script>
+
+    <!-- Prism.js for syntax highlighting in code cells -->
+    <!-- Provides comprehensive syntax highlighting for multiple programming languages commonly used in Jupyter notebooks -->
+    <link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism.css">
+    <script src="https://unpkg.com/prismjs/prism.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-python.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-julia.min.js"></script>
+    <script src="https://unpkg.com/prismjs/components/prism-r.min.js"></script>
+
+    <!-- Markdown rendering and notebook parsing libraries -->
+    <!-- marked.js converts markdown text in notebook cells to HTML -->
+    <!-- notebookjs parses and renders the complete Jupyter notebook structure -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notebookjs@0.8.3/notebook.min.js"></script>
+
+    <!-- KaTeX for mathematical expression rendering -->
+    <!-- Provides fast, high-quality rendering of LaTeX mathematical notation commonly found in scientific notebooks -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js"></script>
+
+    <!-- Internationalization (i18n) support -->
+    <!-- Enables multi-language support for the previewer interface -->
+    <script src="lib/jquery.i18n.js"></script>
+    <script src="lib/jquery.i18n.messagestore.js"></script>
+    <script src="lib/jquery.i18n.language.js"></script>
+
+    <!-- Application-specific JavaScript modules -->
+    <script type="text/javascript" src="js/retriever.js"></script>
+    <script type="text/javascript" src="js/jupyter.js"></script>
+
+    <!-- Bootstrap CSS framework for responsive layout and styling -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Custom stylesheets for preview functionality and loading animations -->
+    <link type="text/css" rel="stylesheet" href="css/preview.css" />
+    <link type="text/css" rel="stylesheet" href="css/lds-spinner.css" />
+
+    <!-- Custom stylesheet for Jupyter notebook styling -->
+    <link type="text/css" rel="stylesheet" href="css/jupyter.css" />
+
+</head>
+
+<body class="container">
+    <main>
+        <img id='logo' alt='Site Logo'>
+        <h1 class="page-title jupyterPreviewText">Jupyter Notebook Preview</h1>
+        <div class='preview-container'>
+            <div class='preview-header'></div>
+            <div class='preview'>
+                <div class="lds-spinner">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="notebook"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+</html>

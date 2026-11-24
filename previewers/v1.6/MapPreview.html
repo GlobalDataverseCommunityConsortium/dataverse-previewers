@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title class="mapPreviewText">Map Preview</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/xss.js"></script>
+        <script src="lib/jquery.i18n.js"></script>
+        <script src="lib/jquery.i18n.messagestore.js"></script>
+        <script src="lib/jquery.i18n.language.js"></script>
+        <script type="text/javascript" src="js/retriever.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+            integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+            integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="anonymous"/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+        <link type="text/css" rel="stylesheet" href="css/preview.css" />
+    </head>
+
+    <body class="container">
+        <main>
+            <img id='logo' alt='Site Logo'>
+            <h1 class="page-title mapPreviewText">Map Preview</h1>
+            <div class='preview-container'>
+                <div class='preview-header'></div>
+                <div class='preview'>
+                    <div id="map" style="width: 800px; height: 500px;"></div>
+                </div>
+            </div>
+        </main>
+        <script type="text/javascript" src="js/map.js"></script>
+    </body>
+</html>

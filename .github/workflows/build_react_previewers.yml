@@ -1,0 +1,32 @@
+name: Build React previewers
+
+on: [push]
+
+jobs:
+  build_react_previewers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+      - name: Install dependencies
+        run: python3 -m pip install pyyaml checksumdir
+      - name: Set up npm
+        uses: actions/setup-node@v3
+      - name: Run script and build apps
+        run: python3 ./.github/scripts/build_previewers.py
+      - name: Push built previewers
+        run: |
+          if [[ `git status --porcelain` ]]; then
+            git add --all
+            git config --global user.name 'Previewer Builder'
+            git config --global user.email 'builder@bot.com'
+            git commit -am "Previewer update"
+            git push
+          else
+            echo "Nothing changed!"
+          fi
+        

@@ -1,0 +1,10 @@
+name: HDF5-Previewer
+checkdir: ./src
+checksum: 7e45f108cbc678a9b308330d04c0e79103b2e1c74f97a3440313aa4d78119d1a
+build:
+- npm install
+- npm run build
+files:
+- ./dist/js/hdf5.js
+- ./dist/css/hdf5.css
+- ./dist/HDF5Preview.html
